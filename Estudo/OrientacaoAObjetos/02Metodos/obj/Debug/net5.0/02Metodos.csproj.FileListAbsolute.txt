@@ -1,0 +1,16 @@
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\bin\Debug\net5.0\02Metodos.exe
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\bin\Debug\net5.0\02Metodos.deps.json
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\bin\Debug\net5.0\02Metodos.runtimeconfig.json
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\bin\Debug\net5.0\02Metodos.runtimeconfig.dev.json
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\bin\Debug\net5.0\02Metodos.dll
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\bin\Debug\net5.0\02Metodos.pdb
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\obj\Debug\net5.0\02Metodos.csproj.AssemblyReference.cache
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\obj\Debug\net5.0\02Metodos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\obj\Debug\net5.0\02Metodos.AssemblyInfoInputs.cache
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\obj\Debug\net5.0\02Metodos.AssemblyInfo.cs
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\obj\Debug\net5.0\02Metodos.csproj.CoreCompileInputs.cache
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\obj\Debug\net5.0\02Metodos.dll
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\obj\Debug\net5.0\refint\02Metodos.dll
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\obj\Debug\net5.0\02Metodos.pdb
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\obj\Debug\net5.0\02Metodos.genruntimeconfig.cache
+C:\Users\Douglas\Desktop\Estudo\OrientacaoAObjetos\02Metodos\obj\Debug\net5.0\ref\02Metodos.dll

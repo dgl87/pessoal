@@ -1,0 +1,21 @@
+PR
+sempre estar em uma nova branch, exemplo de nome
+fix/channelCertificationKind
+
+commit e push
+fix - Fix new field rule "channelCertificationKind"
+
+PR - Create PR
+What?
+Added new rule for certified channels
+
+Why?
+To meet the new change of certified channels
+
+[Feat] Add Unit Test for certified channels
+
+What?
+Added unit test for new rule for certified channels
+
+Why?
+To meet the new change of certified channels

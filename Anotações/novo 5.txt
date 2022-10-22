@@ -1,0 +1,128 @@
+SELECT
+                        channelKind,
+                        movementDate,
+                        shootingCreated,
+                        sendDate,
+                        sum(createdEvent) as totalShooting,
+                        documentDueDate,
+                        movementLot,
+                        movementFilename,
+                        journeyId,
+                        journeyVersion,
+                        journeyName,
+                        nodeName,
+                        SUM(processedEvent) processedEvent,
+                        SUM(droppedEvent) droppedEvent,
+                        SUM(bounceEvent) bounceEvent,
+                        SUM(deliveredEvent) deliveredEvent,
+                        SUM(deferredEvent) deferredEvent,
+                        SUM(openEvent) openEvent,
+                        SUM(clickEvent) clickEvent,
+                        SUM(spamReportEvent) spamReportEvent,
+                        SUM(unsubscribeEvent) unsubscribeEvent,
+                        SUM(groupUnsubscribeEvent) groupUnsubscribeEvent,
+                        SUM(groupResubscribeEvent) groupResubscribeEvent,
+                        SUM(postedEvent) postedEvent,
+                        SUM(printReleasedEvent) printReleasedEvent,
+                        SUM(printedEvent) printedEvent,
+                        SUM(printRestartedEvent) printRestartedEvent,
+                        SUM(readEvent) readEvent,
+                        SUM(replyEvent) replyEvent,
+                        SUM(deletedEvent) deletedEvent,
+                        SUM(optoutEvent) optoutEvent,
+                        SUM(openUniqueEvent) openUniqueEvent,
+                        SUM(clickedUniqueEvent) clickUniqueEvent,
+                        SUM(readUniqueEvent) readUniqueEvent
+                    FROM (
+                        SELECT
+                        a.channelKind,
+                        a.movementDate,
+                        a.documentDueDate,
+                        CAST(a.shootingCreated AS DATE) shootingCreated,
+                        c.sendDate,
+                        b.TotalShooting,
+                        a.movementLot,
+                        a.movementFilename,
+                        a.journeyId,
+                        a.journeyVersion,
+                        a.journeyName,
+                        a.eventType,
+                        a.nodeName,
+                        CASE WHEN eventType = 'Created' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END createdEvent,
+                        CASE WHEN eventType = 'Processed' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END processedEvent,
+                        CASE WHEN eventType = 'Dropped' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END droppedEvent,
+                        CASE WHEN eventType = 'Delivered' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END deliveredEvent,
+                        CASE WHEN eventType = 'Deferred' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END deferredEvent,
+                        CASE WHEN eventType = 'Nounce' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END bounceEvent,
+                        CASE WHEN eventType = 'Open' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END openEvent,
+                        CASE WHEN eventType = 'Click' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END clickEvent,
+                        CASE WHEN eventType = 'SpamReport' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END spamReportEvent,
+                        CASE WHEN eventType = 'Unsubscribe' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END unsubscribeEvent,
+                        CASE WHEN eventType = 'GroupUnsubscribe' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END groupUnsubscribeEvent,
+                        CASE WHEN eventType = 'GroupResubscribe' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END groupResubscribeEvent,
+                        CASE WHEN eventType = 'Posted' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END postedEvent,
+                        CASE WHEN eventType = 'PrintReleased' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END printReleasedEvent,
+                        CASE WHEN eventType = 'Printed' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END printedEvent,
+                        CASE WHEN eventType = 'PrintRestarted' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END printRestartedEvent,
+                        CASE WHEN eventType = 'Read' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END readEvent,
+                        CASE WHEN eventType = 'Reply' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END replyEvent,
+                        CASE WHEN eventType = 'Deleted' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END deletedEvent,
+                        CASE WHEN eventType = 'Optout' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END optoutEvent,
+                        CASE eventType WHEN 'Open' THEN COUNT(DISTINCT shootingId) ELSE 0 END openUniqueEvent,
+                        CASE eventType WHEN 'Click' THEN COUNT(DISTINCT shootingId) ELSE 0 END clickedUniqueEvent,
+                        CASE eventType WHEN 'Read' THEN COUNT(DISTINCT shootingId) ELSE 0 END readUniqueEvent
+                        FROM
+                        `journey-event-process-prod.bahamascard.journey_event_v2` a
+                        INNER JOIN (
+                        SELECT
+                            COUNT(DISTINCT shootingId) TotalShooting,
+                            journeyId,
+                            journeyVersion,
+                            channelKind
+                        FROM
+                            `journey-event-process-prod.bahamascard.journey_event_v2`
+                        GROUP BY
+                            journeyId,
+                            journeyVersion, channelKind) b
+                        ON
+                        a.journeyVersion = b.journeyVersion
+                        AND a.journeyId = b.journeyId
+                        AND a.channelKind = b.channelKind
+                        INNER JOIN(
+                        select
+                            max(eventDate) sendDate,
+                            journeyId,
+                            journeyVersion FROM
+                            `journey-event-process-prod.bahamascard.journey_event_v2` group by journeyId,
+                            journeyVersion ) c
+                            ON
+                            a.journeyVersion = c.journeyVersion
+                        AND a.journeyId = c.journeyId
+                        GROUP BY
+                        a.eventType,
+                        channelKind,
+                        b.TotalShooting,
+                        a.shootingCreated,
+                        c.sendDate,
+                        a.documentDueDate,
+                        a.movementDate,
+                        shootingCreated,
+                        a.movementLot,
+                        a.movementFilename,
+                        a.nodeName,
+                        a.journeyId,
+                        a.journeyVersion,
+                        a.journeyName)
+                        group by     
+                        channelKind,
+                        shootingCreated,
+                        sendDate,
+                        documentDueDate,
+                        movementDate,
+                        shootingCreated,
+                        movementLot,
+                        movementFilename,
+                        journeyId,
+                        journeyVersion,
+                        journeyName,
+                        nodeName

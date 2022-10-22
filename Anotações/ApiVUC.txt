@@ -1,0 +1,79 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:56648",
+      "sslPort": 49156
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "weatherforecast",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "GOOGLE_APPLICATION_CREDENTIALS": "$(D1_GCP_CREDENTIALS_FOLDER)\\customer-dev-299019-sa-app-ac14fa347a5a.json",
+        "Environment": "Development",
+        "PubSubCustomerProjectId": "d1-bus-dev",
+        "PubSubCustomerTopicName": "topic-customer-upinsert",
+        "ProjectId": "customer-dev-299019",
+        "DoStorageDownloadUrl": "https://do-storage-dev.azurewebsites.net/api/v1/",
+        "AdminTenantUrl": "https://func-admin-tenant-dev-d1.azurewebsites.net/api/tenant"
+      }
+    },
+    "directone.app.journey.customer.api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "weatherforecast",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production",
+        "GOOGLE_APPLICATION_CREDENTIALS": "$(D1_GCP_CREDENTIALS_FOLDER)\\customer-prod-sa-app.json",
+        "Environment": "Release",
+        "PubSubCustomerProjectId": "d1-bus-proda8735564",
+        "PubSubCustomerTopicName": "topic-customer-upinsert",
+        "ProjectId": "customer-prod323f244a", //customer-dev-299019
+        "DoStorageDownloadUrl": "https://do-storage-prd.azurewebsites.net/api/v1/",
+        "AdminTenantUrl": "https://func-admin-tenant-prod.azurewebsites.net/api/tenant/"
+      },
+      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+    },
+    //"directone.app.journey.customer.api": {
+    //  "commandName": "Project",
+    //  "launchBrowser": true,
+    //  "launchUrl": "weatherforecast",
+    //  "environmentVariables": {
+    //    "ASPNETCORE_ENVIRONMENT": "Development",
+    //    "GOOGLE_APPLICATION_CREDENTIALS": "$(D1_GCP_CREDENTIALS_FOLDER)\\customer-dev-sa-app.json",
+    //    "Environment": "Development",
+    //    "PubSubCustomerProjectId": "d1-bus-dev",
+    //    "PubSubCustomerTopicName": "topic-customer-upinsert",
+    //    "ProjectId": "customer-dev-299019", //customer-dev-299019
+    //    "DoStorageDownloadUrl": "https://do-storage-dev.azurewebsites.net/api/v1/",
+    //    "AdminTenantUrl": "https://func-admin-tenant-dev-d1.azurewebsites.net/api/tenant/"
+    //  },
+    //  "applicationUrl": "https://localhost:5001;http://localhost:5000"
+    //},
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production",
+        "GOOGLE_APPLICATION_CREDENTIALS": "/credentials/customer-prod-sa-app.json",
+        "Environment": "Release",
+        "PubSubCustomerProjectId": "d1-bus-proda8735564",
+        "PubSubCustomerTopicName": "topic-customer-upinsert",
+        "ProjectId": "customer-prod323f244a",
+        "DoStorageDownloadUrl": "https://do-storage-prd.azurewebsites.net/api/v1/",
+        "AdminTenantUrl": "https://func-admin-tenant-prod.azurewebsites.net/api/tenant/"
+      },
+      "publishAllPorts": true,
+      "useSSL": true,
+      "httpPort": 56648,
+      "sslPort": 49156
+    }
+  }
+}

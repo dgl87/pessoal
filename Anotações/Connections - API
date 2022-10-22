@@ -1,0 +1,41 @@
+mongodb://usr_journey_camodas:a2WEp5r6FKb3z9G@rsd1.d1.cx:19582,rsd2.d1.cx:26458,rsd3.d1.cx:34856/journey_camodas?replicaSet=rsAzurePrdAPP4d1&connectTimeoutMS=300000&authSource=admin&connect=replicaSet
+mongodb://usr_journey_directone_dev:3GD8ZpFD3rRF7r4k0bOV5IK41x@domongofba1dev.direct.one:33445/admin?readPreference=primary
+mongodb://usr_journey_adminsettings_dev:9Cb6oivgDig2ReFgZw8tpEQFzy@domongofba1dev.direct.one:33445/admin?readPreference=primary
+mongodb://usr_journey_adminsettings:0xiKCn4E5x9Zxe0z@rsd1.d1.cx:19582,rsd2.d1.cx:26458,rsd3.d1.cx:34856/admin?readPreference=primary&replicaSet=
+
+// Connections Exported from Studio 3T -- https://studio3t.com/
+// Exported on 29/09/2021 10:39:44
+
+// prd-settings-mundialmix - imported on 03/09/2021
+mongodb://usr_journey_mundialmix:c7S9Fdt3NJp6j4R@rsd1.d1.cx:19582,rsd2.d1.cx:26458,rsd3.d1.cx:34856/admin?readPreference=primary
+
+// stg-admin-settings - imported on 03/09/2021
+mongodb://usr_journey_adminsettings_hml:8iVDopBRP54r7WvowOwq@domongofba1hml.direct.one:16897/admin?readPreference=primary
+
+// dev-admin-settings - imported on 03/09/2021
+mongodb://usr_journey_adminsettings_dev:9Cb6oivgDig2ReFgZw8tpEQFzy@domongofba1dev.direct.one:33445/admin?readPreference=primary
+
+// dev_storage
+mongodb://usr_appd1_storage_dev@domongofba1dev.direct.one:33445/admin?3t.databases=appd1_storage_dev&3t.connection.name=Dev+-+Storage&3t.uriVersion=2&3t.defaultColor=31,163,86&3t.connectionMode=direct&readPreference=primary
+usr_appd1_storage_dev
+WZv2PADweCR9kraHwLlWYdJ3JTvLiU4IPvG1h
+
+jdbc:sqlserver://do-sqlserver-prd.database.windows.net:1433
+// Billing
+Nome do servidor: do-sqlserver-prd.database.windows.net
+Autenticação: Autenticação do SQL Server
+Usuario: usr_onetoone_core
+Senha: !32Wfd3oEwwd!
+Opções >>
+Conectar ao banco de dados: SYSTEM.ONETOONE.CORE
+
+// Billing mongo
+mongodb://usr_onetoone:46jy63xWmV76alhDRO1efD2@domongoc1prd.d1.cx:19582,domongoc2prd.d1.cx:23185,domongoc3prd.d1.cx:32451/admin?readPreference=primary
+
+PROD
+mongodb://usr_journey_adminsettings:0xiKCn4E5x9Zxe0z@rsd1.d1.cx:19582,rsd2.d1.cx:26458,rsd3.d1.cx:34856/admin?3t.connection.name=journey_adminsettings+PROD&3t.uriVersion=2&3t.defaultColor=231,52,70&3t.databases=admin&readPreference=primary&3t.sharded=true&3t.connectionMode=multi
+usr_journey_adminsettings
+0xiKCn4E5x9Zxe0z
+
+################API
+"https://func-admin-tenant-prod.azurewebsites.net/api/" - API de Tenants

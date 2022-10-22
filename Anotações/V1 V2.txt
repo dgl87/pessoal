@@ -1,0 +1,666 @@
+1o criar  a tabela v2 -> validar o script no tenantonboard - OK
+
+2o - virar a chave antes de iniciar o processamento para já gravar na v2 (tirar do deploy o tenantname da variavel v1  - vuc e cloudrun enrich)  1-esteira ci/cd - 2-migrar na configuração do serviço em prod
+
+3o Gerar na mão no BQ o arquivo da v1 - OK
+
+4o - Baixar arquivos na mão (Dica => Baixar todos os arquivos do bucket com comando https://dev.azure.com/directoneapp/Thanos/_wiki/wikis/Engineering/45/-WIP-Download-m%C3%BAltiplos-arquivos-do-Google-Bucket) - OK
+
+5o - Modificar o script para fazer Loop na pasta - 
+
+6o - processou muda o arquivo de pasta
+
+-------
+mudança no DoWork migrateservice.cs
+tirar o if processed e dropped gerando sem o created - OK
+-------
+
+novo método
+fazer um método pegar o shooting e gerar todos os creates - Criando
+-------
+
+*********Fazer de uma forma que reinicia o processamento de onde parou****
+
+*********começar do tenant menor pro maior
+
+*********validar eventos que existem na v1 antes de começar, ver se algum evento não existe no enum ver no video de onde o piga o tirou o enum
+
+*********ver com o piga se realmente vamos importar o evento RcsCompatible
+
+*********ver com a gabi a hora que vamos processar
+
+*********validar -> migrar um e validar com o piga nessa migração não vamos virar a chave
+
+SELECT eventType
+  FROM `journey-event-process-prod.bradescoseguros.journey_event_v2`
+GROUP BY eventType
+
+
+Tarefas V1/V2
+V1/V2
+args => tenantid, pastacsveventsv1, operation -- migratev1tov2 -- generatecreated
+1o criar  a tabela v2 -> validar o script no tenantonboard
+2o - virar a chave antes de iniciar o processamento para já gravar na v2 (tirar do deploy o tenantname da variavel v1  - vuc e cloudrun enrich)  1-esteira ci/cd - 2-migrar na configuração do serviço em prod
+3o Gerar na mão no BQ o arquivo da v1
+4o - Baixar arquivos na mão (Dica => Baixar todos os arquivos do bucket com comando https://dev.azure.com/directoneapp/Thanos/_wiki/wikis/Engineering/45/-WIP-Download-m%C3%BAltiplos-arquivos-do-Google-Bucket)
+5o - Modificar o script para fazer Loop na pasta
+6o - processou muda o arquivo de pasta
+-------
+mudança no DoWork migrateservice.cs
+tirar o if processed e dropped gerando sem o created
+-------
+novo método
+fazer um método pegar o shooting e gerar todos os creates
+-------
+*********Fazer de uma forma que reinicia o processamento de onde parou
+*********começar do tenant menor pro maior
+*********validar eventos que existem na v1 antes de começar, ver se algum evento não existe no enum ver no video de onde o piga o tirou o enum
+*********ver com o piga se realmente vamos importar o evento RcsCompatible
+*********ver com a gabi a hora que vamos processar
+*********validar -> migrar um e validar com o piga nessa migração não vamos virar a chave
+
+
+
+
+
+SELECT * FROM `journey-event-process-prod.bradescoseguros.journey_event_v2` WHERE 
+shootingId = "60c1ff370769aaca779b2d62" LIMIT 100
+
+SCRIPT DE CRIAÇÃO DA TABELA V2
+[{"name": "created","type": "TIMESTAMP","mode" :"REQUIRED"},
+{"name": "tenantId","type": "STRING","mode" :"REQUIRED"},
+{"name": "tenantName","type": "STRING","mode" :"REQUIRED"},
+{"name": "journeyId","type": "STRING","mode" :"REQUIRED"},
+{"name": "journeyVersion","type": "STRING","mode" :"REQUIRED"},
+{"name": "journeyName","type": "STRING","mode" :"REQUIRED"},
+{"name": "nodeKey","type": "STRING","mode" :"REQUIRED"},
+{"name": "nodeName","type": "STRING","mode" :"REQUIRED"},
+{"name": "channelKind","type": "STRING","mode" :"REQUIRED"},
+{"name": "shootingId","type": "STRING","mode" :"REQUIRED"},
+{"name": "shootingCreated","type": "TIMESTAMP","mode" :"REQUIRED"},
+{"name": "shootingCorrelationId","type": "STRING","mode" :"REQUIRED"},
+{"name": "trackingUrl","type": "STRING","mode" :"REQUIRED"},
+{"name": "trackingIp","type": "STRING","mode" :"REQUIRED"},
+{"name": "userAgent","type": "STRING","mode" :"REQUIRED"},
+{"name": "userAgentBrowserFamily","type": "STRING","mode" :"REQUIRED"},
+{"name": "userAgentBrowserVersion","type": "STRING","mode" :"REQUIRED"},
+{"name": "userAgentOSFamily","type": "STRING","mode" :"REQUIRED"},
+{"name": "userAgentOSVersion","type": "STRING","mode" :"REQUIRED"},
+{"name": "userAgentDeviceFamily","type": "STRING","mode" :"REQUIRED"},
+{"name": "carrierName","type": "STRING","mode" :"REQUIRED"},
+{"name": "recipient","type": "STRING","mode" :"REQUIRED"},
+{"name": "eventType","type": "STRING","mode" :"REQUIRED"},
+{"name": "bounceType","type": "STRING","mode" :"REQUIRED"},
+{"name": "bounceReason","type": "STRING","mode" :"REQUIRED"},
+{"name": "response","type": "STRING","mode" :"REQUIRED"},
+{"name": "eventDate","type": "TIMESTAMP","mode" :"REQUIRED"},
+{"name": "providerEventId","type": "STRING","mode" :"REQUIRED"},
+{"name": "movementDate","type": "DATE","mode" :"REQUIRED"},
+{"name": "movementFilename","type": "STRING","mode" :"REQUIRED"},
+{"name": "movementLot","type": "STRING","mode" :"REQUIRED"},
+{"name": "integrationId","type": "STRING","mode" :"REQUIRED"},
+{"name": "integrationCreated","type": "TIMESTAMP","mode" :"REQUIRED"},
+{"name": "integrationProcessingDate","type": "TIMESTAMP","mode" :"REQUIRED"},
+{"name": "customerId","type": "STRING","mode" :"REQUIRED"},
+{"name": "customerIdentification","type": "STRING","mode" :"REQUIRED"},
+{"name": "customerName","type": "STRING","mode" :"REQUIRED"},
+{"name": "documentDescription","type": "STRING","mode" :"NULLABLE"},
+{"name": "documentDueDate","type": "DATE","mode" :"NULLABLE"},
+{"name": "isTest","type": "BOOLEAN","mode" :"REQUIRED"},
+{"name": "userName","type": "STRING","mode" :"NULLABLE"},
+{"name": "userEmail","type": "STRING","mode" :"NULLABLE"},
+{"name": "documentCorrelationId","type": "STRING","mode" :"NULLABLE"},
+{"name": "documentNumber","type": "STRING","mode" :"NULLABLE"},
+{"name": "documentStoragePath","type": "STRING","mode" :"NULLABLE"},
+{"name": "journeyContextId","type": "STRING","mode" :"REQUIRED"},
+{"name": "channelCertificationKind","type": "STRING","mode" :"REQUIRED"}]
+
+
+
+gsutil -m cp -R gs://journey-event-process-prod/temp/bandcard-dump-20211206113200 c:\migrations
+
+
+--------------------------------
+ATUALIZAÇÃO VIEW vw_journey_event_report_event_chanelKind
+SELECT
+    channelKind,
+    movementDate,
+    shootingCreated,
+    sendDate,
+    sum(createdEvent) as totalShooting,
+    documentDueDate,
+    movementLot,
+    movementFilename,
+    journeyId,
+    journeyVersion,
+    journeyName,
+    nodeName,
+    SUM(createdEvent) createdEvent,
+    SUM(processedEvent) processedEvent,
+    SUM(droppedEvent) droppedEvent,
+    SUM(bounceEvent) bounceEvent,
+    SUM(deliveredEvent) deliveredEvent,
+    SUM(deferredEvent) deferredEvent,
+    SUM(openEvent) openEvent,
+    SUM(clickEvent) clickEvent,
+    SUM(spamReportEvent) spamReportEvent,
+    SUM(unsubscribeEvent) unsubscribeEvent,
+    SUM(groupUnsubscribeEvent) groupUnsubscribeEvent,
+    SUM(groupResubscribeEvent) groupResubscribeEvent,
+    SUM(postedEvent) postedEvent,
+    SUM(printReleasedEvent) printReleasedEvent,
+    SUM(printedEvent) printedEvent,
+    SUM(printRestartedEvent) printRestartedEvent,
+    SUM(readEvent) readEvent,
+    SUM(replyEvent) replyEvent,
+    SUM(deletedEvent) deletedEvent,
+    SUM(optoutEvent) optoutEvent,
+    SUM(openUniqueEvent) openUniqueEvent,
+    SUM(clickedUniqueEvent) clickUniqueEvent,
+    SUM(readUniqueEvent) readUniqueEvent
+FROM (
+    SELECT
+    a.channelKind,
+    a.movementDate,
+    a.documentDueDate,
+    CAST(a.shootingCreated AS DATE) shootingCreated,
+    c.sendDate,
+    b.TotalShooting,
+    a.movementLot,
+    a.movementFilename,
+    a.journeyId,
+    a.journeyVersion,
+    a.journeyName,
+    a.eventType,
+    a.nodeName,
+    CASE WHEN eventType = 'Created' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END createdEvent,
+    CASE WHEN eventType = 'Processed' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END processedEvent,
+    CASE WHEN eventType = 'Dropped' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END droppedEvent,
+    CASE WHEN eventType = 'Delivered' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END deliveredEvent,
+    CASE WHEN eventType = 'Deferred' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END deferredEvent,
+    CASE WHEN eventType = 'Bounce' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END bounceEvent,
+    CASE WHEN eventType = 'Open' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END openEvent,
+    CASE WHEN eventType = 'Click' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END clickEvent,
+    CASE WHEN eventType = 'SpamReport' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END spamReportEvent,
+    CASE WHEN eventType = 'Unsubscribe' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END unsubscribeEvent,
+    CASE WHEN eventType = 'GroupUnsubscribe' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END groupUnsubscribeEvent,
+    CASE WHEN eventType = 'GroupResubscribe' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END groupResubscribeEvent,
+    CASE WHEN eventType = 'Posted' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END postedEvent,
+    CASE WHEN eventType = 'PrintReleased' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END printReleasedEvent,
+    CASE WHEN eventType = 'Printed' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END printedEvent,
+    CASE WHEN eventType = 'PrintRestarted' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END printRestartedEvent,
+    CASE WHEN eventType = 'Read' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END readEvent,
+    CASE WHEN eventType = 'Reply' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END replyEvent,
+    CASE WHEN eventType = 'Deleted' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END deletedEvent,
+    CASE WHEN eventType = 'Optout' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END optoutEvent,
+    CASE eventType WHEN 'Open' THEN COUNT(DISTINCT shootingId) ELSE 0 END openUniqueEvent,
+    CASE eventType WHEN 'Click' THEN COUNT(DISTINCT shootingId) ELSE 0 END clickedUniqueEvent,
+    CASE eventType WHEN 'Read' THEN COUNT(DISTINCT shootingId) ELSE 0 END readUniqueEvent
+    FROM
+    `journey-event-process-prod.sinafseguros.journey_event_v2` a
+    INNER JOIN (
+    SELECT
+        COUNT(DISTINCT shootingId) TotalShooting,
+        journeyId,
+        journeyVersion,
+        channelKind
+    FROM
+        `journey-event-process-prod.sinafseguros.journey_event_v2`
+    GROUP BY
+        journeyId,
+        journeyVersion, channelKind) b
+    ON
+    a.journeyVersion = b.journeyVersion
+    AND a.journeyId = b.journeyId
+    AND a.channelKind = b.channelKind
+    INNER JOIN(
+    select
+        max(eventDate) sendDate,
+        journeyId,
+        journeyVersion FROM
+        `journey-event-process-prod.sinafseguros.journey_event_v2` group by journeyId,
+        journeyVersion ) c
+        ON
+        a.journeyVersion = c.journeyVersion
+    AND a.journeyId = c.journeyId
+    GROUP BY
+    a.eventType,
+    channelKind,
+    b.TotalShooting,
+    a.shootingCreated,
+    c.sendDate,
+    a.documentDueDate,
+    a.movementDate,
+    shootingCreated,
+    a.movementLot,
+    a.movementFilename,
+    a.nodeName,
+    a.journeyId,
+    a.journeyVersion,
+    a.journeyName)
+    group by     
+    channelKind,
+    shootingCreated,
+    sendDate,
+    documentDueDate,
+    movementDate,
+    shootingCreated,
+    movementLot,
+    movementFilename,
+    journeyId,
+    journeyVersion,
+    journeyName,
+    nodeName
+    
+###########
+MARI
+
+SELECT DISTINCT(eventDate) FROM `journey-event-process-prod.mst.journey_rate_dw` 
+WHERE tenantId = '57bf002600b4e11ab0e6074d'LIMIT 1000
+
+SELECT DATE(_PARTITIONTIME)
+FROM `journey-event-process-prod.portoseguro.journey_event_v2`
+WHERE DATE(_PARTITIONTIME) > "2021-01-01"
+GROUP BY DATE(_PARTITIONTIME)
+ORDER BY 1
+
+DECLARE p_tenant_id STRING DEFAULT "57bf002600b4e11ab0e6074d"; 
+DECLARE ingestDate DEFAULT DATE "2021-09-19"; 
+CALL `journey-event-process-prod.portoseguro.sp_merge_journey_customer`(p_tenant_id, ingestDate);
+CALL `journey-event-process-prod.portoseguro.sp_merge_journey_rate`(p_tenant_id, ingestDate);
+
+sp_merge_journey_customer
+sp_merge_journey_rate
+
+-------------------------
+db.shooting.find().sort({"created": 1});
+
+SELECT count(*) FROM `journey-event-process-prod.portoseguro.journey_event_v2`
+WHERE eventType = 'Created' 
+
+Select distinct eventType from `journey-event-process-prod.portoseguro.journey_event`
+
+{created: {$gte: ISODate("2021-08-24T19:28:41.247+0000"), $lte: ISODate("2022-01-07T12:01:00.011+0000")}}
+
+
+
+
+"CAEDU", ok
+"CATTAN", **
+"BANDCARD", ok
+"BANCOBARI", **
+"BECKER", **
+"CAMPELO",
+"CREDPAR",
+"DBSUPERMERCADOS",
+"FARMCIASSOJOO",
+"GOIASCARD",
+"GRUPOPEREIRA",
+"IMPECAVELCARD",
+"IRMOSPATROCNIO",
+"JO-CALCADOS", **
+"MONTREALMAGAZINE",
+"MUNDIALMIX",
+"OSCAR-CALCADOS",
+"PAGUE-MENOS",
+"QUEIROZ",
+"RENZ",
+"ROLDAO",
+"SAVEGNAGO",
+"SIDCONVNIOS",
+"SOVICENTE",
+"IRANISUPERMERCADOS", ok
+"VISUALFASHION", ok
+"VOXCRED", 
+"INVESTIMENTOS",
+"SUPERBOM"
+
+
+
+
+SP_merge_journey_Customer - Localiza o tenantId na tabela MST.tenant para colher informações dele.
+seleciona tenantId, customerId (customerHash), eventDate da V2 onde, DATE(_PARTITIONTIME) = ingestDate e eventType = 'Created' e adiciona 1 em total e adiciona na tabela prod.mst.merge_execution:
+tenantId,
+tenantName,
+mergeName,
+ingestDate,
+startExecution,
+endExecution,
+userName
+
+
+SP_MERGE_Journey_Rate - Localiza o tenantId na tabela mst.tenant para colher informações dele.
+seleciona o distinct eventDate da v2 onde, DATE(_PARTITIONTIME) = ingestDate e DATE(_PARTITIONTIME) é DIFERENTE de DATE(eventDate) e cria a tabela particionada Portoseguro_journey_event_v2_deduplicate
+
+
+Conta os DISTINCT providerEventId e shootingId, chamando de total e totalUnique onde DATE(_PARTITIONTIME) = ingestDate e DATE(_PARTITIONTIME) = DATE(eventDate) e cria a tabela particionada mst.journey_rate_dw
+
+
+pega da tabela prod.portoseguro.journey_event_v2_deduplicate quando DATE(_PARTITIONTIME) = ingestDate e DATE(_PARTITIONTIME) DIFERENTE DATE(eventDate) e adiciona na prod.mst.merge_execution:
+tenantId,
+      tenantName,
+      mergeName,
+      ingestDate,
+      startExecution,
+      endExecution,
+      userName
+
+
+SP_merge_journey_Customer cria:	- mst.merge_execution
+SP_MERGE_Journey_Rate cria:	- Portoseguro_journey_event_v2_deduplicate
+				- mst.journey_rate_dw
+				_ mst.merge_execution
+
+ProviderEventId?
+_PARTITIONTIME?
+
+qualicorp
+2022-01-19 max
+56a89ce4f117f90f98fcde2c
+2021-08-02 min
+
+SOMPO - somposegurossa
+5b0862830829721a008d380b
+2021-07-29 20:33:50 UTC min
+
+portoseguro
+57bf002600b4e11ab0e6074d
+2021-05-28 min
+
+Qualicorp Empresarial
+5d151c3d6cee11536058412c
+2021-08-24 min
+
+porto odonto
+61043335c061322218a5cf6a	
+2021-09-20 min
+
+pefisa
+61083eb11c30be16881562cf
+2021-09-09 min
+
+Pernambucanas
+56d8af35d75d9632105a33f0
+2021-06-10
+
+Sinaf Seguros
+5b27bcb80829731a00b48f94	
+2021-08-06
+
+Bradesco Seguros
+5f6d00b1355e9e0db8549286
+2021-05-26
+
+
+Bradesco seguros - 5f6d00b1355e9e0db8549286 - ok
+Porto seguro - 57bf002600b4e11ab0e6074d - ok
+Sompo - 5b0862830829721a008d380b - ok
+Qualicorp Empresarial - 5d151c3d6cee11536058412c - ok
+Qualicorp - 56a89ce4f117f90f98fcde2c - ok
+Porto Odonto - 61043335c061322218a5cf6a ok
+Pfisa - Autopass - 61083eb11c30be16881562cf -ok
+Pernambucanas - 56d8af35d75d9632105a33f0 - ok
+Sinaf - 5b27bcb80829731a00b48f94 - ok
+
+----------------------------------------
+SELECT COUNT(*) FROM `journey-event-process-prod.pernambucanas.journey_event_v2` 
+WHERE 
+eventDate <= '2021-10-16 00:00:00' and eventType = 'Created'  2021-09-16
+
+and eventType != 'RcsCompatible'
+
+SELECT COUNT(*) FROM `journey-event-process-prod.pernambucanas.journey_event` 
+WHERE 
+--eventDate <= '2022-01-19 19:26:03' and 
+eventType != 'Created' and eventType != 'RcsCompatible'
+
+{created: {$gte: ISODate("2021-07-20T22:18:50.636+0000"), $lte: ISODate("2021-09-01T00:00:00.000+0000")}}
+{created: {$gte: ISODate("2021-09-01T00:00:00.001+0000"), $lte: ISODate("2021-09-16T00:00:00.000+0000")}} - 7842006
+{created: {$gte: ISODate("2021-09-16T00:00:00.001+0000"), $lte: ISODate("2021-10-16T00:00:00.000+0000")}} - 3906364 + 7842006 = 11.748.370
+{created: {$gte: ISODate("2021-10-16T00:00:00.001+0000"), $lte: ISODate("2021-11-01T00:00:00.000+0000")}} - 1003736 + 11748370 = 12.752.106
+{created: {$gte: ISODate("2021-11-01T00:00:00.001+0000"), $lte: ISODate("2021-11-17T00:00:00.000+0000")}} - 2359498 + 12752106 = 15.111.604
+{created: {$gte: ISODate("2021-11-17T00:00:00.001+0000"), $lte: ISODate("2021-12-07T00:00:00.000+0000")}} - 2020972 + 15111604 = 17.132.576
+{created: {$gte: ISODate("2021-12-07T00:00:00.001+0000"), $lte: ISODate("2021-12-20T00:00:00.000+0000")}} - 2659178 + 17132576 = 19.791.754
+{created: {$gte: ISODate("2021-12-20T00:00:00.001+0000"), $lte: ISODate("2022-01-07T00:00:00.000+0000")}} - 2033193 + 19791754 = 21.824.947
+{created: {$gte: ISODate("2022-01-07T00:00:00.001+0000"), $lte: ISODate("2022-01-19T19:26:03.000+0000")}} - 2424114 + 21824947 = 24.249.061
+24249061
+
+
+SCRIPT PARA RODAR AS ROTINAS NO BQ
+----------------------------------
+using Google.Cloud.BigQuery.V2;
+using System;
+using System.Threading.Tasks;
+
+namespace DirectOne.App.Poc
+{
+    public class InfoTenants
+    {
+        public string TenantId { get; set; }        
+        public string ProjetoId { get; set; }
+        public string TenantName { get; set; }
+
+
+        public InfoTenants(string tenantId, string projetoId, string tenantName)
+        {
+            TenantId = tenantId;
+            
+            ProjetoId = projetoId;
+            TenantName = tenantName;
+        }
+
+        public void FirstDateTenant(string projetoId, string tenantName)
+        {
+            Task<BigQueryResults> resultadoSQL;
+            var cliente = BigQueryClient.Create(projetoId);
+            string consultaSQL = $"SELECT Min(eventDate) FROM `{projetoId}.{tenantName}.journey_event_v2` WHERE eventType = 'Created'";
+
+            resultadoSQL = cliente.ExecuteQueryAsync(consultaSQL, null);
+             
+        }
+    }
+}
+using Google.Cloud.BigQuery.V2;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace DirectOne.App.Poc
+{
+    public class Program
+    {
+        static async Task Main(string[] args)
+        {
+            InfoTenants tenant;
+
+            Console.Write("Digite o TenantId: ");
+            string tenantId = Console.ReadLine();
+            Console.Write("Digite o TenantName: ");
+            string tenantName = Console.ReadLine();
+            Console.Write("Digite a data final: ");
+            DateTime dateEndIn = DateTime.Parse(Console.ReadLine());
+            string projetoId = "journey-event-process-prod";
+            
+
+
+
+            tenant = new InfoTenants(tenantId, tenantName, projetoId);                        
+            var cliente = BigQueryClient.Create(projetoId);
+
+            //Loop de data
+            string consultaSQL;
+            BigQueryResults resultadoSQL;
+            //DateTime StartDate = new DateTime(2020, 10, 03);
+            //DateTime EndDate = new DateTime(2021, 10, 03);
+
+            //TODO
+            //metodo para pegar a primeira data
+            var dateStartIn = tenant.FirstDateTenant(projetoId, tenantName);
+
+            foreach (DateTime tenantDay in EachDay(dateStartIn, dateEndIn))
+            {
+                Console.WriteLine(tenantDay.ToString("yyyy-MM-dd"));
+                consultaSQL = $"CALL `{projetoId}.portoseguro.sp_merge_journey_customer`('{tenantId}', '{tenantDay.ToString("yyyy-MM-dd")}');\n"
+                            + $"CALL `{projetoId}.portoseguro.sp_merge_journey_rate`('{tenantId}', '{tenantDay.ToString("yyyy-MM-dd")}');";
+                resultadoSQL = await cliente.ExecuteQueryAsync(consultaSQL, null);
+            }
+            //metodo
+            static IEnumerable<DateTime> EachDay(DateTime from, DateTime thru)
+            {
+                for (DateTime day = from.Date; day.Date <= thru.Date; day = day.AddDays(1))
+                    yield return day;
+            }
+        }
+    }
+}
+
+-------------------------------------------
+consultaSQL
+TRUNCATE TABLE `journey-event-process-prod.portoseguro.journey_event_v2` 
+
+SELECT COUNT(*) Total FROM `journey-event-process-prod.portoseguro.journey_event_v2`
+Where eventType = "RcsCompatible"
+SELECT COUNT(*) FROM `journey-event-process-prod.portoseguro.journey_event`
+WHERE eventType = 'Created';
+
+
+SELECT * FROM `journey-event-process-prod.mst.merge_execution` 
+WHERE tenantId = '5a301aaf08298f1470e771d0'
+order by ingestDate
+
+SELECT MIN(eventDate) FROM `journey-event-process-prod.campelo.journey_event_v2`
+
+
+O erro que você vê está relacionado ao limite de operações DML simultâneas enviadas na tabela dsp_google_ads_asset_master. Conforme documentado aqui , quando uma operação DML é executada em uma tabela, o BigQuery enfileira outras que são enviadas no estado Pendente. A partir da mensagem de erro que você observou, parece que você atingiu o limite de simultaneidade para os trabalhos pendentes que é 20.
+
+Esse limite de simultaneidade é aplicado por tabela, portanto, infelizmente, usar consultas em lote ou interativas não resolverá esse problema. A única solução que posso pensar é levar em conta essa restrição e controlar o número de trabalhos DML enviados. Se essa for uma restrição pesada para seu caso de uso, você pode entrar em contato com o suporte técnico do GCP e consultar se esse limite (20) pode ser aumentado para seu projeto.
+
+https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language#update_delete_merge_dml_concurrency
+
+SELECT
+                        channelKind,
+                        movementDate,
+                        shootingCreated,
+                        sendDate,
+                        sum(processedEvent + droppedEvent) as totalShooting,
+                        documentDueDate,
+                        movementLot,
+                        movementFilename,
+                        journeyId,
+                        journeyVersion,
+                        journeyName,
+                        nodeName,
+                        SUM(processedEvent) processedEvent,
+                        SUM(droppedEvent) droppedEvent,
+                        SUM(bounceEvent) bounceEvent,
+                        SUM(deliveredEvent) deliveredEvent,
+                        SUM(deferredEvent) deferredEvent,
+                        SUM(openEvent) openEvent,
+                        SUM(clickEvent) clickEvent,
+                        SUM(spamReportEvent) spamReportEvent,
+                        SUM(unsubscribeEvent) unsubscribeEvent,
+                        SUM(groupUnsubscribeEvent) groupUnsubscribeEvent,
+                        SUM(groupResubscribeEvent) groupResubscribeEvent,
+                        SUM(postedEvent) postedEvent,
+                        SUM(printReleasedEvent) printReleasedEvent,
+                        SUM(printedEvent) printedEvent,
+                        SUM(printRestartedEvent) printRestartedEvent,
+                        SUM(readEvent) readEvent,
+                        SUM(replyEvent) replyEvent,
+                        SUM(deletedEvent) deletedEvent,
+                        SUM(optoutEvent) optoutEvent,
+                        SUM(openUniqueEvent) openUniqueEvent,
+                        SUM(clickedUniqueEvent) clickUniqueEvent,
+                        SUM(readUniqueEvent) readUniqueEvent
+                    FROM (
+                        SELECT
+                        a.channelKind,
+                        a.movementDate,
+                        a.documentDueDate,
+                        CAST(a.shootingCreated AS DATE) shootingCreated,
+                        c.sendDate,
+                        b.TotalShooting,
+                        a.movementLot,
+                        a.movementFilename,
+                        a.journeyId,
+                        a.journeyVersion,
+                        a.journeyName,
+                        a.eventType,
+                        a.nodeName,
+                        CASE WHEN eventType = 'Processed' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END processedEvent,
+                        CASE WHEN eventType = 'Dropped' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END droppedEvent,
+                        CASE WHEN eventType = 'Delivered' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END deliveredEvent,
+                        CASE WHEN eventType = 'Deferred' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END deferredEvent,
+                        CASE WHEN eventType = 'Bounce' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END bounceEvent,
+                        CASE WHEN eventType = 'Open' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END openEvent,
+                        CASE WHEN eventType = 'Click' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END clickEvent,
+                        CASE WHEN eventType = 'SpamReport' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END spamReportEvent,
+                        CASE WHEN eventType = 'Unsubscribe' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END unsubscribeEvent,
+                        CASE WHEN eventType = 'GroupUnsubscribe' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END groupUnsubscribeEvent,
+                        CASE WHEN eventType = 'GroupResubscribe' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END groupResubscribeEvent,
+                        CASE WHEN eventType = 'Posted' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END postedEvent,
+                        CASE WHEN eventType = 'PrintReleased' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END printReleasedEvent,
+                        CASE WHEN eventType = 'Printed' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END printedEvent,
+                        CASE WHEN eventType = 'PrintRestarted' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END printRestartedEvent,
+                        CASE WHEN eventType = 'Read' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END readEvent,
+                        CASE WHEN eventType = 'Reply' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END replyEvent,
+                        CASE WHEN eventType = 'Deleted' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END deletedEvent,
+                        CASE WHEN eventType = 'Optout' THEN COUNT(DISTINCT a.providerEventId) ELSE 0 END optoutEvent,
+                        CASE eventType WHEN 'Open' THEN COUNT(DISTINCT shootingId) ELSE 0 END openUniqueEvent,
+                        CASE eventType WHEN 'Click' THEN COUNT(DISTINCT shootingId) ELSE 0 END clickedUniqueEvent,
+                        CASE eventType WHEN 'Read' THEN COUNT(DISTINCT shootingId) ELSE 0 END readUniqueEvent
+                        FROM
+                        `journey-event-process-prod.bradescosegurossinis.journey_event_v2` a
+                        INNER JOIN (
+                        SELECT
+                            COUNT(DISTINCT shootingId) TotalShooting,
+                            journeyId,
+                            journeyVersion,
+                            channelKind
+                        FROM
+                            `journey-event-process-prod.bradescosegurossinis.journey_event_v2`
+                        GROUP BY
+                            journeyId,
+                            journeyVersion, channelKind) b
+                        ON
+                        a.journeyVersion = b.journeyVersion
+                        AND a.journeyId = b.journeyId
+                        AND a.channelKind = b.channelKind
+                        INNER JOIN(
+                        select
+                            max(eventDate) sendDate,
+                            journeyId,
+                            journeyVersion FROM
+                            `journey-event-process-prod.bradescosegurossinis.journey_event_v2` group by journeyId,
+                            journeyVersion ) c
+                            ON
+                            a.journeyVersion = c.journeyVersion
+                        AND a.journeyId = c.journeyId
+                        GROUP BY
+                        a.eventType,
+                        channelKind,
+                        b.TotalShooting,
+                        a.shootingCreated,
+                        c.sendDate,
+                        a.documentDueDate,
+                        a.movementDate,
+                        shootingCreated,
+                        a.movementLot,
+                        a.movementFilename,
+                        a.nodeName,
+                        a.journeyId,
+                        a.journeyVersion,
+                        a.journeyName)
+                        group by     
+                        channelKind,
+                        shootingCreated,
+                        sendDate,
+                        documentDueDate,
+                        movementDate,
+                        shootingCreated,
+                        movementLot,
+                        movementFilename,
+                        journeyId,
+                        journeyVersion,
+                        journeyName,
+                        nodeName

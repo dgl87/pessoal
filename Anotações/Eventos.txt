@@ -1,0 +1,51 @@
+Eventos de Provider são os eventos de interações do usuário (click, open, read)
+Gateway quem faz disparo 
+Broker São de empresas parceira é um terceiro que fazem o envio (sendgrid e-mail, por exemplo)
+Ronaldo monta o modelo que o Gateway aceita e manda pra fila do Gateway
+
+Create é a soma de Dropped + Processed
+
+Enrique recebe evento cru, enriquece e grava no banco
+
+TenantId - Id do nosso cliente
+
+created	 é a hora que eu gravei no banco nosso
+tenantId	STRING	REQUIRED	
+tenantName	STRING	REQUIRED	
+journeyId	Id da jornada	
+journeyVersion	Id da versão da jornada	
+journeyName	Nome que está na jornada	
+nodeKey	caixinhas da jornada... cada caixinha tem uma chave 	
+nodeName	STRING	REQUIRED	
+channelKind	Tipo do canal (email, wpp, sms	
+shootingId	Representa uma comunicação - Um disparo, uma comunicaççao	
+shootingCreated	TIMESTAMP	REQUIRED	
+shootingCorrelationId	É uma chave que quem está chamando a API passa para gravar no banco para relacionar com o sistema dele 
+trackingUrl	dependendo do evento tem essas infomações.... que email? Qual agent? Browse? aplicativo Wpp? versão do Brouwser
+trackingIp	STRING	REQUIRED	
+userAgent	STRING	REQUIRED	
+userAgentBrowserFamily	STRING	REQUIRED	
+userAgentBrowserVersion	STRING	REQUIRED	
+userAgentOSFamily	STRING	REQUIRED	
+userAgentOSVersion	STRING	REQUIRED	
+userAgentDeviceFamily	STRING	REQUIRED	
+carrierName	nome operadora
+recipient	email, nuneroi do wahtsaap - destinatário do disparo	
+eventType	tipo do evento, foi abertura? processamento? Dropped?	
+bounceType	pode ser 2 valores, softbouce ou hardbounce - hard é aquele erro que acontece na comunicação que não consigo resolver (por ex email invalido) - tenta 1 vez e já era
+		soft se sua caixa de msg está cheia - o próprio broker ficará fazendo tentativas até conseguir resolver	
+bounceReason	STRING	REQUIRED	
+response	quando cara responde sms 	
+eventDate	diferente do created, é a hora que aconteceu. Se tiver um problema na plataforma e demorar 2 dias, terá um gap de 2 dias pro created - data que efetivamente o evento aconteceu	
+providerEventId	é um Id que uidentifica de forma unica o evento na nossa plataforma - não posso ter 2 eventos - gateway qeu recebe todos os eventos de todos os brokers controla  isso de uma forma de saber esse evento chegou e o ID dele é esse usando hash - duplica no banco por bug	
+movementDate	data de movimento do disparo . normalmente A mesma data do request	
+movementFilename	STRING	REQUIRED	
+movementLot	STRING	REQUIRED	
+integrationId	STRING	REQUIRED	
+integrationCreated	DATE	REQUIRED	
+integrationProcessingDate	DATE	REQUIRED	
+customerId	STRING	REQUIRED	
+customerIdentification	STRING	REQUIRED	
+customerName	STRING	REQUIRED	
+documentDescription	STRING	REQUIRED	
+documentDueDate	DATE	NULLABLE

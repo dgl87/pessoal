@@ -1,0 +1,135 @@
+#CALCULOS DEFINIDOS NAS MÉTRICAS
+percentage_click => total_click/total_delivered 
+percentage_active => total_delivered/total_inactive_active 
+percentage_delivered => total/delivered / total_processed
+percentage_dropped => total_droppep / total_created 
+percentage_error => total_bounce / total_processed
+percentage_inactive => total_inactive / total_inactive_active  
+percentage_open => total_open / total_delivered  
+percentage_optout => total_optout/total_delivered  
+percentage_read => total_read/ total_delivered  
+percentage_reply => total_reply/total_delivered 
+percentage_spam => total_spam/total_delivered  
+
+#MÉTRICAS CRIADAS PARA OS CANAIS
+##RCS
+rcs_percentage_active - acO2t3ibuzWt
+rcs_percentage_click - acT2zaNFwRjj
+rcs_percentage_delivered - aaB2LONl3wJJ
+rcs_percentage_dropped - acA2GrZR1kpy
+rcs_percentage_error - ac42DyVoWFeY
+rcs_percentage_inactive - acB2KgtoLuJS
+rcs_percentage_open - aai2WinAcrqL
+rcs_percentage_optout - adw2EQd3Bclv
+rcs_percentage_read - aeL2F3UKCR5c
+rcs_percentage_reply - aaw2Wi8rUa3n
+rcs_percentage_spam - acn2OFCJIuwD
+rcs_total_bounce - aeX2c4GGhTJa
+rcs_total_click - acj2kAIpCJxN
+rcs_total_delivered - aaL2xSbmvUwf
+rcs_total_read - adQ2iFUdnjg0
+rcs_total_reply - aa02tCULPjg9
+
+##EMAIL
+email_percentage_active	- abRpOiCplaTv
+email_percentage_click	- acOpPURwmv9v
+email_percentage_delivered - adGpIpvOhhmj
+email_percentage_dropped - acjpQTrcmwoq
+email_percentage_error	- aeBpICs0Y2zh
+email_percentage_inactive - abDpV0yvxZzN
+email_percentage_open - acopPRwwTN8l	
+email_percentage_optout	- acVpQjNm32Ju
+email_percentage_read - afgpNHno2ltV
+email_percentage_reply	- acZpQaJB32aM
+email_percentage_spam - adppNMGqlbcR
+email_total_bounce	- afSpIB80hrgv
+email_total_click	- agGpJGzLhZ56
+email_total_delivered	- acdpPZPzmvgJ
+email_total_read - aetpOwjQ16OX
+email_total_reply - aa7pWsTdtiMy
+email_total_processed - aacxYoYgaUWD
+email_total_spam - aahxRDI4ZOa2
+email_total_dropped - absxDX50P9XF
+email_total_open - aaXxQ6VSZEt4
+
+##SMS
+sms_percentage_active - actpQjNm32Ju
+sms_percentage_click - acLpGsexFQZL
+sms_percentage_delivered - acSpQkLfUbHq
+sms_percentage_dropped - afApItwbhE0Z
+sms_percentage_error - acopRwpH4XOY
+sms_percentage_inactive - acWpNAZF2lfD
+sms_percentage_open - aaUpXtSvsGgD
+sms_percentage_optout - acjpNMGqlbcR
+sms_percentage_read - adTpNT29la7c
+sms_percentage_reply - accpSfdmT9Yx
+sms_percentage_spam - aa4pSZn5vVd4
+sms_total_bounce - adqpO2oltlff
+sms_total_click - afcpK2K7ieVc
+sms_total_delivered - ac4pQesv37AE
+sms_total_read - abrpXtSvsGgD
+sms_total_reply - abEpSZn5vVd4
+sms_total_dropped - abEwMYqPCrRD
+sms_total_processed - aemwGcn1xLRD
+
+##WhatsApp
+whatsapp_percentage_active - aalq7LiyvB9w
+whatsapp_percentage_click - acnqVWb3nRmC
+whatsapp_percentage_delivered - ab8q5UJcO84E
+whatsapp_percentage_dropped - adiqQ75iJPfs
+whatsapp_percentage_error - acVqQzv564zb
+whatsapp_percentage_inactive - acdqZ6PHqMG8
+whatsapp_percentage_open - adaqTY9fL2W4
+whatsapp_percentage_optout - abcq2HctsOOD
+whatsapp_percentage_read - ac0qSIFO7uHb
+whatsapp_percentage_reply - aaIq9EF5RxAS
+whatsapp_percentage_spam - aaVq74kDvlIH
+whatsapp_total_bounce - aabrbk3Pyjwg
+whatsapp_total_click - adEqWLWOIkKF
+whatsapp_total_delivered - aarrbdWMSHz4
+whatsapp_total_read - abpq2kaVMuGP
+whatsapp_total_reply - abFq5YdqO9Ad
+whatsapp_total_dropped - adrwH4GdyIev
+whatsapp_total_processed - acYwKiP5AEMj
+
+##PUSH
+push_percentage_active - aaHDhtbbbINE
+push_percentage_click - aaTDiZS3TPNl
+push_percentage_delivered - aaDDmIRbe8sf
+push_percentage_dropped - aboDiK6SyJIi
+push_percentage_error - aapDk4UUZqmu
+push_percentage_inactive - aabDseaqhNjn
+push_percentage_open - aaZDfwQNRIif
+push_percentage_optout - abDC9UCyGVyQ
+push_percentage_read - aaTDlC8wznBI
+push_percentage_reply - abmDk4ZaZqvN
+push_percentage_spam - aaRDmcXcemMH
+push_total_bounce - aavxZrvZLpSp
+push_total_click - aaAx1BkA5IpA
+push_total_delivered - aaSxRUjzZ20e
+push_total_dropped - aa1xOWzVQsLS
+push_total_open - aa4xYoYgaUWD
+push_total_processed - aacDyhXKpZg9
+push_total_read - aanx2MZkgkUQ
+push_total_reply - abJDnPj5BcQT
+push_total_spam - abLDjtpfXVFz
+
+##PRINT
+print_percentage_active - achNzZEOenjA
+print_total_delivered - aaYNDGsdlGgE
+print_percentage_delivered - acdNAG0Geva7
+print_total_printed - aek3NbCNX94J
+print_total_posted - acr3RvzBXVsX
+print_total_processed - aat36wqiarUJ
+print_total_created - ace3R0rX73U3
+
+total_push_created - ad5qNWhYCGxc
+
+
+TODO
+metricas de processed ok
+push - Adicionar ok
+adicionar filtro de data para barras Ok
+Adicionar KPI nos canais (Funil) ok
+Adicionar canais nos gráficos de funil 
+

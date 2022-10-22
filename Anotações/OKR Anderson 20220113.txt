@@ -1,0 +1,422 @@
+##Link Documento
+https://docs.google.com/spreadsheets/d/1iug6EyCSdOyvSa5BeRXb6646mfWvatwaDrpfqd5VuW4 - planilha
+https://docs.google.com/document/d/16PVp-EBAzczLwb0lkM5PnBjzXix3C6KQfI4CRWNdUvg - doc
+https://docs.google.com/spreadsheets/d/1hH5hqNodJ585dcw4w3JLjyVfixROZiiifY9VCtN_GZ4 - teste
+###############################################################################################################################################################
+##Mostra Bradesco
+
+select 'Setembro' AS Mes, ff.id Id, ff.tradeName Tenant, SUM((CONVERT(INT, rs.amount))) Quantidade, sum(rs.total) Valor 
+from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm f on f.id = rs.providerId	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement between '2021-09-01 00:00:00.000' and '2021-09-30 00:00:00.000' and ff.tradeName like '%radesco%'
+group by ff.id, ff.tradeName
+
+select 'Outubro' AS Mes, ff.id Id, ff.tradeName Tenant, SUM((CONVERT(INT, rs.amount))) Quantidade, sum(rs.total) Valor 
+from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm f on f.id = rs.providerId	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement between '2021-10-01 00:00:00.000' and '2021-10-31 00:00:00.000' and ff.tradeName like '%radesco%'
+group by ff.id, ff.tradeName 
+
+select 'Novembro' AS Mes, ff.id Id, ff.tradeName Tenant, SUM((CONVERT(INT, rs.amount))) Quantidade, sum(rs.total) Valor 
+from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm f on f.id = rs.providerId	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement between '2021-11-01 00:00:00.000' and '2021-11-30 00:00:00.000' and ff.tradeName like '%radesco%'
+group by ff.id, ff.tradeName
+
+select 'Dezembro' AS Mes, ff.id Id, ff.tradeName Tenant, SUM((CONVERT(INT, rs.amount))) Quantidade, sum(rs.total) Valor 
+from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm f on f.id = rs.providerId	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement between '2021-12-01 00:00:00.000' and '2021-12-31 00:00:00.000' and ff.tradeName like '%radesco%'
+group by ff.id, ff.tradeName
+
+
+Mês			Id	Tenant   			Quantidade	Valor
+Setembro	222	BRADESCO SEGUROS	610842		16816,978
+Outubro		222	BRADESCO SEGUROS	422688		10238,138
+Novembro	222	BRADESCO SEGUROS	308342		9201,686
+Dezembro	135	BRADESCO			57881748	1469337,096
+Dezembro	222	BRADESCO SEGUROS	397076		14739,83
+
+###############################################################################################################################################################
+##Mostra Tenants
+select 'Setembro' AS Mes, ff.id Id, ff.tradeName Tenant, SUM((CONVERT(INT, rs.amount))) Quantidade, sum(rs.total) Valor 
+from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm f on f.id = rs.providerId	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement between '2021-09-01 00:00:00.000' and '2021-09-30 00:00:00.000' --and ff.tradeName like '%%'
+group by ff.id, ff.tradeName
+order by ff.tradeName
+
+select 'Outubro' AS Mes, ff.id Id, ff.tradeName Tenant, SUM((CONVERT(INT, rs.amount))) Quantidade, sum(rs.total) Valor 
+from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm f on f.id = rs.providerId	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement between '2021-10-01 00:00:00.000' and '2021-10-31 00:00:00.000' --and ff.tradeName like '%ACE SEGURADORA%'
+group by ff.id, ff.tradeName
+order by ff.tradeName 
+
+select 'Novembro' AS Mes, ff.id Id, ff.tradeName Tenant, SUM((CONVERT(INT, rs.amount))) Quantidade, sum(rs.total) Valor 
+from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm f on f.id = rs.providerId	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement between '2021-11-01 00:00:00.000' and '2021-11-30 00:00:00.000' --and ff.tradeName like '%ACE SEGURADORA%'
+group by ff.id, ff.tradeName
+order by ff.tradeName
+
+select 'Dezembro' AS Mes, ff.id Id, ff.tradeName Tenant, SUM((CONVERT(INT, rs.amount))) Quantidade, sum(rs.total) Valor 
+from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm f on f.id = rs.providerId	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement between '2021-12-01 00:00:00.000' and '2021-12-31 00:00:00.000' --and ff.tradeName like '%ACE SEGURADORA%'
+group by ff.id, ff.tradeName
+order by ff.tradeName
+
+Mês	Id		Tenant	Quantidade	Valor	
+Setembro	126		Agillitas	20	0	
+Setembro	161	ALLIED	247422	5493,574	
+Setembro	136	ALTSA	84420	253,26	
+Setembro	142	ANITA	306382	6753,734	
+Setembro	176	AXA	168972	34631,78	
+Setembro	171	AZUL SEGUROS	4837696	265056,788	
+Setembro	164	BAHAMAS CARD	930456	20536,938	
+Setembro	35	Banco Alfa	1	13090	
+Setembro	159	BANCO BARIGUI	84	1,9	
+Setembro	131	BANCO MAXIMA	1687520	88803,67	
+Setembro	286	Banco Santander	134	2,572	
+Setembro	141	BANDCARD	53080	1208,022	
+Setembro	160	BECKER	505258	11118,432	
+Setembro	222	BRADESCO SEGUROS	610842	16816,978	
+Setembro	153	CAEDU	3722084	45209,916	
+Setembro	41	CAIXA SEGURADORA	1	35000	
+Setembro	145	CAMPELO	28206	650,994	
+Setembro	120	CARTAO VAI BEM	460050	14371,698	
+Setembro	149	CATTAN	445116	10058,76	
+Setembro	54	Chubb	1	7500	
+Setembro	132	CNOVA	31404198	456844,484	
+Setembro	156	CREDPAR	99390	2276,994	
+Setembro	144	DB SUPERMERCADOS	357188	8173,214	
+Setembro	158	FARMACIAS SÃO JOÃO	4258	95,894	
+Setembro	60	FIS	2	102101,5	
+Setembro	238	FLAMBOYAN	9496	250,556	
+Setembro	237	Fundação Saúde Itaú	1077556	67427,318	
+Setembro	157	GOIAS CARD	36268	816,8	
+Setembro	151	GRUPO PEREIRA	3243262	43761,946	
+Setembro	170	HDI	5564390	131176,248	
+Setembro	24	HDI Seguros	1	25000	
+Setembro	95	HDI SEGUROS S.A	1	25000	
+Setembro	123	Impecável Card	321436	7165,87	
+Setembro	152	IRMÃOS PATROCINIO	32976	733,3	
+Setembro	138	JÔ CALÇADOS	399820	9032,824	
+Setembro	19	MAPFRE - MARKETING	1	75682,44	
+Setembro	202	Milla	5312	149,612	
+Setembro	16	MITSUI	372612	59726,212	
+Setembro	146	MONTREAL MAGAZINE	990846	22164,106	
+Setembro	150	MUNDIAL MIX	449380	10047,958	
+Setembro	169	ODONTOPREV	1372602	215659,452	
+Setembro	59	Odontosystem	21342	9052,18	
+Setembro	139	OSCAR CALÇADOS	865638	19543,952	
+Setembro	140	PAGUE MENOS	185876	4250,246	
+Setembro	137	PEFISA	2421960	7265,88	
+Setembro	168	PERNAMBUCANAS	25721716	346595,406	
+Setembro	272	Porto Seguro - Auto	736	30101,026	
+Setembro	128	PREVENT SENIOR	302852	3681,436	
+Setembro	22	Qualicorp	384724	48499,805	
+Setembro	58	Qualicorp Empresarial	598	32,706	
+Setembro	143	QUEIROZ	183258	4178,192	
+Setembro	199	RENSZ CALÇADOS LTDA	89556	1996,21	
+Setembro	163	ROLDÃO	189266	4174,622	
+Setembro	205	Safe2Go	1142	339,6	
+Setembro	240	SANTANDER AUTOSA	347674	11101,06	
+Setembro	162	SAVEGNAGO	722622	16784,676	
+Setembro	173	SINAF	1873124	231513,4	
+Setembro	165	SINDCONVENIOS	16394	369,716	
+Setembro	172	SOMPO	765228	32483,296	
+Setembro	134	SOROCRED	2301048	76436,548	
+Setembro	100	Sorocred	1	10000	
+Setembro	11	SULAMERICA	1	13000	
+Setembro	154	SUPERBOM	212096	4787,33	
+Setembro	166	SUPERMERCADO SÃO VICENTE	119924	2637,178	
+Setembro	147	SUPERMERCADOS IRANI	34208	769,19	
+Setembro	175	SURA	2	74566,26	
+Setembro	13	SURA	4	37283,13	
+Setembro	258	Tempo Assist	2	8000	
+Setembro	12	TOKIO MARINE	1381119	29240,518	
+Setembro	129	TRIBANCO	14972	258,34	
+Setembro	106	UNIMED BH	98264	40700,08	
+Setembro	246	UNIPRIME	232	5,97	
+Setembro	44	VIA VAREJO	1	35000	
+Setembro	133	VIA VAREJO HOLDING	55658024	376665,704	
+Setembro	200	VISUAL FASHION	94252	2076,032	
+Setembro	148	VOXCRED	1341334	29952,278	
+Setembro	206	XP Investimentos	1789802	39726,226	
+Setembro	103	XS3	589472	13589,136	
+Setembro	37	Zurich Seguros	447069	10676,835	
+Outubro	126	Agillitas	56	0	
+Outubro	161	ALLIED	285620	6341,782	
+Outubro	136	ALTSA	134580	504,7	
+Outubro	142	ANITA	317660	7001,934	
+Outubro	176	AXA	71394	25818,02	
+Outubro	171	AZUL SEGUROS	5549146	271799,276	
+Outubro	164	BAHAMAS CARD	923458	20384,276	
+Outubro	35	Banco Alfa	1	13090	
+Outubro	159	BANCO BARIGUI	18	0,402	
+Outubro	131	BANCO MAXIMA	1212148	92205,12	
+Outubro	286	Banco Santander	380	7,132	
+Outubro	141	BANDCARD	53854	1225,706	
+Outubro	160	BECKER	558306	12285,904	
+Outubro	222	BRADESCO SEGUROS	422688	10238,138	
+Outubro	153	CAEDU	3434208	41221,892	
+Outubro	41	CAIXA SEGURADORA	1	35000	
+Outubro	145	CAMPELO	28124	649,074	
+Outubro	120	CARTAO VAI BEM	292668	16957,79	
+Outubro	149	CATTAN	433194	9788,65	
+Outubro	54	Chubb	1	7500	
+Outubro	132	CNOVA	44240434	548219,082	
+Outubro	156	CREDPAR	100684	2306,538	
+Outubro	144	DB SUPERMERCADOS	359716	8224,936	
+Outubro	158	FARMACIAS SÃO JOÃO	3948	88,93	
+Outubro	60	FIS	2	102101,5	
+Outubro	238	FLAMBOYAN	38388	1012,754	
+Outubro	237	Fundação Saúde Itaú	203012	12094,768	
+Outubro	157	GOIAS CARD	33232	751,946	
+Outubro	151	GRUPO PEREIRA	3173006	40405,914	
+Outubro	170	HDI	5717736	132751,276	
+Outubro	24	HDI Seguros	1	25000	
+Outubro	95	HDI SEGUROS S.A	1	25000	
+Outubro	123	Impecável Card	327668	7307,884	
+Outubro	152	IRMÃOS PATROCINIO	32836	730,288	
+Outubro	261	Jeferson Gomes	544	0	
+Outubro	138	JÔ CALÇADOS	386028	8744,82	
+Outubro	279	Light	2	8000	
+Outubro	19	MAPFRE - MARKETING	1	75682,44	
+Outubro	269	Marilinha	1499956	499682	
+Outubro	202	Milla	17652	503,134	
+Outubro	16	MITSUI	485429	72140,315	
+Outubro	146	MONTREAL MAGAZINE	1252240	28023,952	
+Outubro	150	MUNDIAL MIX	457422	10217,528	
+Outubro	169	ODONTOPREV	1231472	203671,958	
+Outubro	59	Odontosystem	27492	11179,08	
+Outubro	139	OSCAR CALÇADOS	838086	18985,01	
+Outubro	140	PAGUE MENOS	189462	4330,682	
+Outubro	137	PEFISA	608748	1826,244	
+Outubro	168	PERNAMBUCANAS	23611984	313569,008	
+Outubro	272	Porto Seguro - Auto	340415	78411,51	
+Outubro	128	PREVENT SENIOR	23885992	414637,254	
+Outubro	22	Qualicorp	352006	45575,645	
+Outubro	58	Qualicorp Empresarial	3375	228,82	
+Outubro	143	QUEIROZ	185118	4221,708	
+Outubro	199	RENSZ CALÇADOS LTDA	118992	2684,07	
+Outubro	163	ROLDÃO	207560	4577,81	
+Outubro	205	Safe2Go	1102	380,68	
+Outubro	240	SANTANDER AUTOSA	512930	17305,86	
+Outubro	162	SAVEGNAGO	725738	16841,53	
+Outubro	173	SINAF	2018184	234992,05	
+Outubro	165	SINDCONVENIOS	19624	442,826	
+Outubro	172	SOMPO	1132520	49085,188	
+Outubro	134	SOROCRED	2386904	83072,384	
+Outubro	100	Sorocred	1	10000	
+Outubro	11	SULAMERICA	1	13000	
+Outubro	154	SUPERBOM	196378	4447,046	
+Outubro	166	SUPERMERCADO SÃO VICENTE	105950	2355,506	
+Outubro	147	SUPERMERCADOS IRANI	32188	727,198	
+Outubro	175	SURA	2	74566,26	
+Outubro	13	SURA	4	37283,13	
+Outubro	258	Tempo Assist	2	8000	
+Outubro	12	TOKIO MARINE	1354909	27169,186	
+Outubro	129	TRIBANCO	12876	224,956	
+Outubro	106	UNIMED BH	63942	34771,76	
+Outubro	246	UNIPRIME	240	6,33	
+Outubro	44	VIA VAREJO	1	35000	
+Outubro	274	Via Varejo - RH	7324	1486,772	
+Outubro	133	VIA VAREJO HOLDING	49704378	393773,814	
+Outubro	200	VISUAL FASHION	106058	2333,64	
+Outubro	148	VOXCRED	1270482	28372,866	
+Outubro	206	XP Investimentos	1881258	41723,88	
+Outubro	103	XS3	605286	13650,754	
+Outubro	37	Zurich Seguros	523027	10703,385	
+Novembro	126	Agillitas	148	0	
+Novembro	161	ALLIED	297102	6596,626	
+Novembro	136	ALTSA	131324	492,486	
+Novembro	142	ANITA	330894	7292,798	
+Novembro	176	AXA	66606	25476,98	
+Novembro	171	AZUL SEGUROS	5416396	291101,762	
+Novembro	164	BAHAMAS CARD	893476	19726,724	
+Novembro	35	Banco Alfa	1	13090	
+Novembro	159	BANCO BARIGUI	12	0,272	
+Novembro	131	BANCO MAXIMA	1593654	72017,38	
+Novembro	286	Banco Santander	15636	289,836	
+Novembro	141	BANDCARD	55234	1256,926	
+Novembro	160	BECKER	611658	13459,986	
+Novembro	222	BRADESCO SEGUROS	308342	9201,686	
+Novembro	255	BV	61436	3071,8	
+Novembro	265	C&A Modas	300	6,944	
+Novembro	153	CAEDU	3870504	46148,296	
+Novembro	41	CAIXA SEGURADORA	1	35000	
+Novembro	145	CAMPELO	27616	637,298	
+Novembro	120	CARTAO VAI BEM	307442	17766,258	
+Novembro	149	CATTAN	420186	9494,39	
+Novembro	54	Chubb	1	7500	
+Novembro	132	CNOVA	35605532	507836,75	
+Novembro	156	CREDPAR	102146	2336,42	
+Novembro	144	DB SUPERMERCADOS	363454	8298,574	
+Novembro	201	Edenred	19870	0	
+Novembro	158	FARMACIAS SÃO JOÃO	3886	87,552	
+Novembro	60	FIS	2	102101,5	
+Novembro	238	FLAMBOYAN	56216	1483,63	
+Novembro	237	Fundação Saúde Itaú	4656	414,384	
+Novembro	157	GOIAS CARD	35182	791,468	
+Novembro	151	GRUPO PEREIRA	3306752	41999,418	
+Novembro	170	HDI	6662558	122318,752	
+Novembro	24	HDI Seguros	1	25000	
+Novembro	95	HDI SEGUROS S.A	1	25000	
+Novembro	123	Impecável Card	326480	7284,092	
+Novembro	152	IRMÃOS PATROCINIO	33256	739,734	
+Novembro	261	Jeferson Gomes	34	0	
+Novembro	138	JÔ CALÇADOS	404070	9138,228	
+Novembro	279	Light	2	8000	
+Novembro	19	MAPFRE - MARKETING	1	75682,44	
+Novembro	269	Marilinha	1733928	577976	
+Novembro	202	Milla	29548	839,87	
+Novembro	16	MITSUI	518594	77219,583	
+Novembro	146	MONTREAL MAGAZINE	1010060	22612,806	
+Novembro	150	MUNDIAL MIX	469324	10473,316	
+Novembro	169	ODONTOPREV	1213132	194066,12	
+Novembro	59	Odontosystem	24094	9607,872	
+Novembro	139	OSCAR CALÇADOS	911992	20602,724	
+Novembro	140	PAGUE MENOS	194372	4442,182	
+Novembro	137	PEFISA	307604	1153,536	
+Novembro	253	PEFISA AUTOPASS	1280	0	
+Novembro	168	PERNAMBUCANAS	27453890	368710,364	
+Novembro	272	Porto Seguro - Auto	1926770	239336,386	
+Novembro	128	PREVENT SENIOR	11194774	178982,558	
+Novembro	22	Qualicorp	227706	36910,407	
+Novembro	58	Qualicorp Empresarial	1342	131,456	
+Novembro	143	QUEIROZ	185088	4221,7	
+Novembro	199	RENSZ CALÇADOS LTDA	129718	2919,898	
+Novembro	163	ROLDÃO	245500	5405,352	
+Novembro	205	Safe2Go	1668	585,4	
+Novembro	240	SANTANDER AUTOSA	300876	9745,57	
+Novembro	162	SAVEGNAGO	740102	17161,926	
+Novembro	173	SINAF	2720026	360148,6	
+Novembro	165	SINDCONVENIOS	23196	523,62	
+Novembro	172	SOMPO	901678	48425,31	
+Novembro	134	SOROCRED	2401748	88889,728	
+Novembro	100	Sorocred	1	10000	
+Novembro	154	SUPERBOM	211298	4769,276	
+Novembro	166	SUPERMERCADO SÃO VICENTE	145312	3203,264	
+Novembro	147	SUPERMERCADOS IRANI	33462	752,45	
+Novembro	13	SURA	4	37283,13	
+Novembro	175	SURA	6	74566,26	
+Novembro	258	Tempo Assist	1690	8060,768	
+Novembro	12	TOKIO MARINE	1491471	29914,466	
+Novembro	129	TRIBANCO	12340	216,504	
+Novembro	106	UNIMED BH	76054	30357,92	
+Novembro	246	UNIPRIME	880	23,01	
+Novembro	44	VIA VAREJO	1	35000	
+Novembro	274	Via Varejo - RH	1720	349,16	
+Novembro	133	VIA VAREJO HOLDING	64092968	502474,944	
+Novembro	200	VISUAL FASHION	115128	2533,26	
+Novembro	148	VOXCRED	1401100	31275,956	
+Novembro	206	XP Investimentos	1964912	43612,738	
+Novembro	103	XS3	722814	16307,448	
+Novembro	37	Zurich Seguros	368591	10640,454	
+Dezembro	126	Agillitas	352	0	
+Dezembro	161	ALLIED	285102	6330,224	
+Dezembro	136	ALTSA	510504	1914,416	
+Dezembro	142	ANITA	337820	7444,996	
+Dezembro	176	AXA	72130	25821,2	
+Dezembro	171	AZUL SEGUROS	6276130	339498,726	
+Dezembro	164	BAHAMAS CARD	857512	18930,218	
+Dezembro	159	BANCO BARIGUI	6	0,13	
+Dezembro	131	BANCO MAXIMA	1210874	64323,48	
+Dezembro	286	Banco Santander	61508	1162,18	
+Dezembro	141	BANDCARD	55628	1265,274	
+Dezembro	160	BECKER	652842	14366,342	
+Dezembro	135	BRADESCO	57881748	1469337,096	
+Dezembro	222	BRADESCO SEGUROS	397076	14739,83	
+Dezembro	255	BV	8916	445,8	
+Dezembro	265	C&A Modas	1254862	24613,662	
+Dezembro	153	CAEDU	4434828	51867,062	
+Dezembro	145	CAMPELO	27354	631,396	
+Dezembro	120	CARTAO VAI BEM	333698	17233,876	
+Dezembro	149	CATTAN	446628	10091,336	
+Dezembro	132	CNOVA	19814054	287294,022	
+Dezembro	156	CREDPAR	100286	2295,414	
+Dezembro	144	DB SUPERMERCADOS	363290	8283,998	
+Dezembro	201	Edenred	25890	0	
+Dezembro	158	FARMACIAS SÃO JOÃO	3626	81,7	
+Dezembro	238	FLAMBOYAN	113588	2997,82	
+Dezembro	237	Fundação Saúde Itaú	26032	1186,448	
+Dezembro	157	GOIAS CARD	33696	759,034	
+Dezembro	151	GRUPO PEREIRA	3355600	42559,426	
+Dezembro	170	HDI	7950378	135885,994	
+Dezembro	123	Impecável Card	336420	7505,55	
+Dezembro	259	Inbursa	54	0	
+Dezembro	152	IRMÃOS PATROCINIO	32316	719,012	
+Dezembro	261	Jeferson Gomes	70	0	
+Dezembro	138	JÔ CALÇADOS	406294	9193,352	
+Dezembro	279	Light	12942	8764,12	
+Dezembro	269	Marilinha	149943	49981	
+Dezembro	295	Marisa	655544	0	
+Dezembro	202	Milla	40804	1158,16	
+Dezembro	16	MITSUI	351868	56679,596	
+Dezembro	146	MONTREAL MAGAZINE	1062944	23805,858	
+Dezembro	150	MUNDIAL MIX	499554	11133,8	
+Dezembro	169	ODONTOPREV	1381654	221031,024	
+Dezembro	59	Odontosystem	23257	9638,784	
+Dezembro	139	OSCAR CALÇADOS	954986	21571,182	
+Dezembro	140	PAGUE MENOS	198128	4527,25	
+Dezembro	137	PEFISA	623388	2337,73	
+Dezembro	253	PEFISA AUTOPASS	12080	0	
+Dezembro	168	PERNAMBUCANAS	25194428	339161,978	
+Dezembro	272	Porto Seguro - Auto	2282790	282653,904	
+Dezembro	128	PREVENT SENIOR	10059536	217507,796	
+Dezembro	22	Qualicorp	134935	29746,298	
+Dezembro	58	Qualicorp Empresarial	2633	199,458	
+Dezembro	143	QUEIROZ	182854	4171,3	
+Dezembro	291	Reclame Aqui	54870	0	
+Dezembro	199	RENSZ CALÇADOS LTDA	135854	3051,984	
+Dezembro	163	ROLDÃO	226636	5000,14	
+Dezembro	205	Safe2Go	958	372,72	
+Dezembro	240	SANTANDER AUTOSA	345942	11275,952	
+Dezembro	162	SAVEGNAGO	734852	17031,106	
+Dezembro	173	SINAF	2102078	286534,02	
+Dezembro	165	SINDCONVENIOS	23752	536,286	
+Dezembro	172	SOMPO	935486	52326,604	
+Dezembro	134	SOROCRED	2638622	90424,704	
+Dezembro	154	SUPERBOM	210470	4749,754	
+Dezembro	166	SUPERMERCADO SÃO VICENTE	172576	3794,76	
+Dezembro	147	SUPERMERCADOS IRANI	32158	724,642	
+Dezembro	258	Tempo Assist	1470	8052,848	
+Dezembro	12	TOKIO MARINE	1489875	29889,046	
+Dezembro	129	TRIBANCO	13102	227,316	
+Dezembro	130	TRICARD	23802	0	
+Dezembro	106	UNIMED BH	88922	35880,04	
+Dezembro	246	UNIPRIME	788	20,6	
+Dezembro	274	Via Varejo - RH	772	156,716	
+Dezembro	133	VIA VAREJO HOLDING	60313140	507254,538	
+Dezembro	200	VISUAL FASHION	130990	2882,256	
+Dezembro	148	VOXCRED	1459118	32616,712	
+Dezembro	206	XP Investimentos	2166654	48250,662	
+Dezembro	103	XS3	685494	15461,732	
+Dezembro	37	Zurich Seguros	353425	6423,757	

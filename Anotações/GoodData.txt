@@ -1,0 +1,146 @@
+DEV:	
+domain ID: 	d1-dev
+hostname:	d1-dev.on.gooddata.com
+domain admin: 	ps-etl+d1-dev@gooddata.com
+token: 	0061E00001K7vNsQAJ_DEV
+Pass:	.Secure#610
+	
+TEST	
+domain ID: 	d1-test
+hostname:	d1-test.on.gooddata.com
+domain admin: 	ps-etl+d1-test@gooddata.com
+token: 	0061E00001K7vNsQAJ_TEST
+Pass:	<B8Tms:kgf(A.c67
+	
+PROD	
+domain ID: d1	
+hostname:	d1.on.gooddata.com
+domain admin: 	ps-etl+d1@gooddata.com
+token: 	0061E00001K7vNsQAJ
+Pass:	$}):35e4Tx@)Kd^S
+
+hostname:	d1-dev.on.gooddata.com
+domain admin: 	ps-etl+d1-dev@gooddata.com
+Pass:	.Secure#610
+
+ps-etl+d1-dev@gooddata.com
+
+
+- Async - Para métodos de criação do count
+
+linha 27 - Quantidade de linhas
+
+yyyy-MM-dd
+--------------------------------------------------------------------------------------------
+RELEASE
+gd_encoded_params
+{
+  "tokens": {
+    "pg": "0061E00001K7vNsQAJ_DEV"
+  },
+  "technical_users": ["ps-etl+d1-dev@gooddata.com"],
+  "development_client": {
+    "server": "d1-dev.on.gooddata.com",
+    "username": "ps-etl+d1-dev@gooddata.com",
+    "password": "${development_client_password}"
+  },
+  "SEGMENTS": [{
+    "segment_id": "default",
+    "development_pid": "aw7iemksyum0bbx3jfmmlff3tjenpxk0",
+    "driver": "pg",
+    "master_name": "D1 - Default Master Billing v#{version}"
+  }],
+  "mssql_client": {
+    "connection": {
+      "url": "jdbc:sqlserver://do-sqlserver-prd.database.windows.net:1433",
+      "authentication": {
+        "basic": {
+          "userName": "usr_onetoone_core",
+          "password": "${mssql_key}"
+        }
+      },
+      "database": "SYSTEM.ONETOONE.CORE",
+      "sslMode": "verify-full"
+    }
+  }
+}
+transfer_all true
+data_product default
+organization d1-dev
+development_client_password .Secure#610
+mssql_key !32Wfd3oEwwd!
+----------------------------------------------------------------------------------------------
+Provisioning
+gd_encoded_params
+{  
+  "mssql_client": {
+    "connection": {
+      "url": "jdbc:sqlserver://do-sqlserver-prd.database.windows.net:1433",
+      "authentication": {
+        "basic": {
+          "userName": "usr_onetoone_core",
+          "password": "${mssql_key}"
+        }
+      },
+      "database": "SYSTEM.ONETOONE.CORE",
+      "sslMode": "verify-full"
+    }
+  },
+  "input_source": {
+    "type": "mssql",
+    "query": "select * from sys.sysusers;"
+  },
+  "whitelists": ["ps-etl+d1-dev@gooddata.com"]
+}
+
+sync_mode add_to_organization
+data_product default
+organization d1-dev
+mssql_key !32Wfd3oEwwd!
+----------------------------------------------------------------------------------------------
+gd_encoded_params
+{
+  "tokens": {
+    "pg": "0061E00001K7vNsQAJ_DEV"
+  },
+  "technical_users": ["ps-etl+d1-dev@gooddata.com"],
+  "development_client": {
+    "server": "d1-dev.on.gooddata.com",
+    "username": "ps-etl+d1-dev@gooddata.com",
+    "password": "${development_client_password}"
+  },
+  "SEGMENTS": [{
+    "segment_id": "default",
+    "development_pid": "aw7iemksyum0bbx3jfmmlff3tjenpxk0",
+    "driver": "pg",
+    "master_name": "D1 - Default Master Billing v#{version}"
+  }],
+  "mssql_client": {
+    "connection": {
+      "url": "jdbc:sqlserver://do-sqlserver-prd.database.windows.net:1433",
+      "authentication": {
+        "basic": {
+          "userName": "usr_onetoone_core",
+          "password": "${mssql_key}"
+        }
+      },
+      "database": "SYSTEM.ONETOONE.CORE",
+      "sslMode": "verify-full"
+    }
+  }
+}
+
+transfer_all true
+data_product default
+organization d1-dev-billing
+development_client_password .Secure#610
+mst.private_key !32Wfd3oEwwd!
+----
+61a0ce37228fab00015c05da
+dbo
+SYSTEM.ONETOONE.CORE
+usr_onetoone_core
+
+jdbc:sqlserver://do-sqlserver-prd.database.windows.net:1433
+
+

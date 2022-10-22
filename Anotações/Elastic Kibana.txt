@@ -1,0 +1,22 @@
+GET /customer_sinafseguros/_search
+{
+  "query": {
+    "multi_match" : {
+      "query": "012.128.557-01", 
+      "type": "bool_prefix",
+      "fields": [ "id", "documents.cpf" , "emails.address" ] 
+    }
+  }
+}
+
+GET /customer_sindconvvnios/_search
+{
+  "query": {
+    "term": {
+      "_id": {
+        "value": "792.087.278-07"
+      }
+    }
+  }
+}
+

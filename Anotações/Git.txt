@@ -1,0 +1,40 @@
+git --version //verifica versão
+
+git config --global user.name "Douglas Paiva" //configura nome
+git config --global user.email "dglandre@gmail.com //configura email
+git config --global user.email "dglandre@gmail.com //configura email
+git config --global core.editor sub //configura editor, por exemplo sublime
+
+git config user.name //verifica nome
+git config user.email //verifica email
+git config user.list //verifica lista de configurações
+
+##LINUX
+ls //lista diretorio em uma linha
+dir //lista diretorio em coluna
+mkdir nomePasta //cria pasta
+rmdir nomePasta //apaga pasta vazia
+cls //limpa o terminal
+rm nomeArquivo.txt //apaga arquivo
+
+#CRIANDO ARQUIVO TEXTO VIM
+vi textoTeste.txt //abre novo arquivo texto
+ESC + :w //salva arquivo texto
+ESC + :q //sai do arquivo texto
+rm - r nomeDaPasta //apaga pasta e arquivos / pastas que estiverem internos
+
+git init //cria repositório
+vi README.md //cria arquivo README no repositorio
+git status //verifica alterações no repositorio
+git add README.md //adiciona arquivo especifico
+git add . //adiciona arquivos
+git add -A //adiciona todos arquivos que foram alterados
+git commit -m "Primeiro Commit" //gera commit
+git commit -am "alteração de função" //adiciona na branch e commit'a
+git log //lista de todos os commit's na branch atual
+
+git branch //mostra branch's
+
+git reset - soft idDoCommit //volta para a versão anterior, mantendo os arquivos na branch (volta etapa anterior ao commit)
+git reset - mixed idDoCommit //
+git reset - hard idDoCommit //volta para a versão anterior, removendo todas alterações atuais

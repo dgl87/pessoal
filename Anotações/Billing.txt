@@ -1,0 +1,361 @@
+BILLING
+
+VIEw Para ver price range
+select f.id, f.tradeName, p.name, pr.* from PriceRange pr
+left join ContractProduct cp on cp.id = pr.ContractProductId
+left join Product p on p.id = cp.serviceproviderproductid
+left join ContractItem ci on ci.id = cp.contractItemId
+left join Contract c on c.id = ci.contractId
+left join Firm f on f.id = c.contractorId
+where p.name like '%SMS%' and pr.Value > 0
+order by f.tradeName, pr.Value
+
+
+
+CRIAÇÃO DE UMA VIEW PARA DASHBOARD DO GOODDATA
+Campos que devemos mostrar
+	Data > Tenant > Itens de agrupamento (jornadas/campanhas) > produtos (itens cobrados) > totais (por data)
+
+Buscar todas as firmas que possuem ActiveCutDate = 1 com exceção da "D1.CX" (fornecedor)
+Buscar todos os agrupamentos com base no providerId = "D1.CX.Grouping"
+
+No billing, estão agrupados por:
+D1.CX.Grouping >> GroupingItens >>
+
+GroupingItens - temos as jornadas
+ID da jornada - temos no ReportSumary
+
+-- Data > Tenant > Itens de agrupamento (jornadas/campanhas) > produtos (itens cobrados) > totais (por data) pivot table dx.cx grouping
+
+-- Data > Tenant > Itens de agrupamento (jornadas/campanhas) > produtos (itens cobrados) > totais (por data) pivot table dx.cx grouping
+##Pivot
+SELECT *
+FROM (
+	SELECT F.Id, o.MovementDate DataMovimento, F.TradeName Tenant, GI.Title Jornadas, P.Name NomeProduto, OS.Amount Total
+	FROM [dbo].[Firm] F 	
+		LEFT JOIN [dbo].[Contract] C ON C.ContractorId = F.Id
+		LEFT JOIN [dbo].[Order] O ON O.ContractId = C.Id
+		LEFT JOIN [dbo].[OrderService] OS ON OS.OrderId = O.Id
+		LEFT JOIN [dbo].[ContractProduct] CP ON CP.Id = OS.ContractProductId		
+		LEFT JOIN [dbo].[Product] P ON P.Id = CP.ServiceProviderProductId
+		LEFT JOIN [dbo].[OrderServiceTag] OST ON OST.OrderService_Id = OS.Id
+		LEFT JOIN [dbo].[GroupingItemTag] GIT ON GIT.Tag_Id = OST.Tag_Id
+		LEFT JOIN [dbo].[GroupingItem] GI ON GI.Id = GIT.GroupingItem_Id	
+		WHERE F.Id = 161			
+			AND C.Title = 'D1.CX Contract'
+			AND O.MovementDate >= '2021-01-01'		
+		--ORDER BY O.MovementDate
+		) em_linha
+		pivot (sum(Total) for NomeProduto in ([E-Mail Transactional], [Doc Gen], [Document Storage API], [Transpromo], [Orchestration | Processing])) em_colunas
+		ORDER BY 1-- DataMovimento
+		GO 
+##View
+CREATE VIEW vw_billing AS SELECT F.Id, o.MovementDate DataMovimento, F.TradeName Tenant, GI.Title Jornadas, P.Name NomeProduto, OS.Amount Total
+	FROM [dbo].[Firm] F 	
+		LEFT JOIN [dbo].[Contract] C ON C.ContractorId = F.Id
+		LEFT JOIN [dbo].[Order] O ON O.ContractId = C.Id
+		LEFT JOIN [dbo].[OrderService] OS ON OS.OrderId = O.Id
+		LEFT JOIN [dbo].[ContractProduct] CP ON CP.Id = OS.ContractProductId		
+		LEFT JOIN [dbo].[Product] P ON P.Id = CP.ServiceProviderProductId
+		LEFT JOIN [dbo].[OrderServiceTag] OST ON OST.OrderService_Id = OS.Id
+		LEFT JOIN [dbo].[GroupingItemTag] GIT ON GIT.Tag_Id = OST.Tag_Id
+		LEFT JOIN [dbo].[GroupingItem] GI ON GI.Id = GIT.GroupingItem_Id	
+		WHERE F.Id = 161			
+			AND C.Title = 'D1.CX Contract'					
+		ORDER BY O.MovementDate
+
+--Com campanha
+CREATE VIEW [dbo].[V_Dados_Billing_GoodData] AS 
+SELECT F.Id, CONVERT(DATE, o.MovementDate) DataMovimento, F.TradeName Tenant, GI.Title Jornadas, P.Name NomeProduto, CONVERT(INT, OS.Amount) Total
+	FROM [dbo].[Firm] F 	
+		LEFT JOIN [dbo].[Contract] C ON C.ContractorId = F.Id
+		LEFT JOIN [dbo].[Order] O ON O.ContractId = C.Id
+		LEFT JOIN [dbo].[OrderService] OS ON OS.OrderId = O.Id
+		LEFT JOIN [dbo].[ContractProduct] CP ON CP.Id = OS.ContractProductId		
+		LEFT JOIN [dbo].[Product] P ON P.Id = CP.ServiceProviderProductId
+		LEFT JOIN [dbo].[OrderServiceTag] OST ON OST.OrderService_Id = OS.Id
+		LEFT JOIN [dbo].[GroupingItemTag] GIT ON GIT.Tag_Id = OST.Tag_Id
+		LEFT JOIN [dbo].[GroupingItem] GI ON GI.Id = GIT.GroupingItem_Id	
+		WHERE C.Title = 'D1.CX Contract' and o.MovementDate > '2021-08-01'
+		
+--sem campanha
+SELECT F.Id, F.TradeName Tenant, P.Name NomeProduto, SUM (CONVERT(INT, OS.Amount)) Total
+	FROM [dbo].[Firm] F 	
+		LEFT JOIN [dbo].[Contract] C ON C.ContractorId = F.Id
+		LEFT JOIN [dbo].[Order] O ON O.ContractId = C.Id
+		LEFT JOIN [dbo].[OrderService] OS ON OS.OrderId = O.Id
+		LEFT JOIN [dbo].[ContractProduct] CP ON CP.Id = OS.ContractProductId		
+		LEFT JOIN [dbo].[Product] P ON P.Id = CP.ServiceProviderProductId
+		LEFT JOIN [dbo].[OrderServiceTag] OST ON OST.OrderService_Id = OS.Id
+		LEFT JOIN [dbo].[GroupingItemTag] GIT ON GIT.Tag_Id = OST.Tag_Id
+		--LEFT JOIN [dbo].[GroupingItem] GI ON GI.Id = GIT.GroupingItem_Id	
+		WHERE C.Title = 'D1.CX Contract' and o.MovementDate >= '2021-11-01' and o.MovementDate <= '2021-11-30' 
+		and f.TradeName = 'Prevent Senior'
+		group by F.Id, F.TradeName, P.Name 
+		
+
+CREATE VIEW [dbo].[V_Dados_Billing_GoodData] AS
+	SELECT F.Id, CONVERT(DATE, o.MovementDate) DataMovimento, F.TradeName Tenant, P.Name NomeProduto, CONVERT(INT, OS.Amount) Total
+		FROM [dbo].[Firm] F 	
+			LEFT JOIN [dbo].[Contract] C ON C.ContractorId = F.Id
+			LEFT JOIN [dbo].[Order] O ON O.ContractId = C.Id
+			LEFT JOIN [dbo].[OrderService] OS ON OS.OrderId = O.Id
+			LEFT JOIN [dbo].[ContractProduct] CP ON CP.Id = OS.ContractProductId		
+			LEFT JOIN [dbo].[Product] P ON P.Id = CP.ServiceProviderProductId
+			LEFT JOIN [dbo].[OrderServiceTag] OST ON OST.OrderService_Id = OS.Id
+			LEFT JOIN [dbo].[GroupingItemTag] GIT ON GIT.Tag_Id = OST.Tag_Id		
+			WHERE C.Title = 'D1.CX Contract' and o.MovementDate > '2021-08-01'
+			group by F.Id, o.MovementDate, F.TradeName, P.Name, OS.Amount
+			
+SELECT CONVERT(DATE, o.MovementDate) DataMovimento, F.Id, F.TradeName Tenant, P.Name NomeProduto, SUM (CONVERT(INT, OS.Amount)) Total
+	FROM [dbo].[Firm] F 	
+		LEFT JOIN [dbo].[Contract] C ON C.ContractorId = F.Id
+		LEFT JOIN [dbo].[Order] O ON O.ContractId = C.Id
+		LEFT JOIN [dbo].[OrderService] OS ON OS.OrderId = O.Id
+		LEFT JOIN [dbo].[ContractProduct] CP ON CP.Id = OS.ContractProductId		
+		LEFT JOIN [dbo].[Product] P ON P.Id = CP.ServiceProviderProductId
+		LEFT JOIN [dbo].[OrderServiceTag] OST ON OST.OrderService_Id = OS.Id
+		LEFT JOIN [dbo].[GroupingItemTag] GIT ON GIT.Tag_Id = OST.Tag_Id
+		WHERE C.Title = 'D1.CX Contract' and o.MovementDate > '2021-08-01' 
+		
+CREATE VIEW [dbo].[V_Dados_Billing_GoodData] AS
+	SELECT F.Id, CONVERT(DATE, o.MovementDate) DataMovimento, F.TradeName Tenant, P.Name NomeProduto, CONVERT(INT, OS.Amount) Total
+		FROM [dbo].[Firm] F 	
+			LEFT JOIN [dbo].[Contract] C ON C.ContractorId = F.Id
+			LEFT JOIN [dbo].[Order] O ON O.ContractId = C.Id
+			LEFT JOIN [dbo].[OrderService] OS ON OS.OrderId = O.Id
+			LEFT JOIN [dbo].[ContractProduct] CP ON CP.Id = OS.ContractProductId		
+			LEFT JOIN [dbo].[Product] P ON P.Id = CP.ServiceProviderProductId
+			LEFT JOIN [dbo].[OrderServiceTag] OST ON OST.OrderService_Id = OS.Id
+			LEFT JOIN [dbo].[GroupingItemTag] GIT ON GIT.Tag_Id = OST.Tag_Id
+			WHERE C.Title = 'D1.CX Contract' and o.MovementDate > '2021-08-01'
+
+-- view em funcionamento
+CREATE VIEW [dbo].[V_Dados_Billing_GoodData] AS
+	SELECT F.Id, CONVERT(DATE, o.MovementDate) DataMovimento, F.TradeName Tenant, P.Name NomeProduto, CONVERT(INT, OS.Amount) Total
+		FROM [dbo].[Firm] F 	
+			LEFT JOIN [dbo].[Contract] C ON C.ContractorId = F.Id
+			LEFT JOIN [dbo].[Order] O ON O.ContractId = C.Id
+			LEFT JOIN [dbo].[OrderService] OS ON OS.OrderId = O.Id
+			LEFT JOIN [dbo].[ContractProduct] CP ON CP.Id = OS.ContractProductId		
+			LEFT JOIN [dbo].[Product] P ON P.Id = CP.ServiceProviderProductId
+			LEFT JOIN [dbo].[OrderServiceTag] OST ON OST.OrderService_Id = OS.Id
+			LEFT JOIN [dbo].[GroupingItemTag] GIT ON GIT.Tag_Id = OST.Tag_Id
+			WHERE C.Title = 'D1.CX Contract' and o.MovementDate > '2021-08-01' 
+
+DASH DE PRODUTOS
+- retirar jornadas
+- deixar a query desde agosto
+- publicar em prod
+- criar usuario para quem estava na reuniao
+------------
+- incluir o valor na query
+- adicionar no relatório o valor
+
+
+select ff.id, ff.tradeName as tenant, rs.movement, gi.title, f.tradename as provider, sum(rs.amount) amount, sum(rs.total) total from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm f on f.id = rs.providerId	
+left join firm ff on ff.id = g.contractorId	
+where g.contractorid = 22	
+and rs.movement between '2021-08-01 00:00:00.000' and '2021-08-30 00:00:00.000'	
+group by ff.id, ff.tradename, gi.title, rs.movement, f.tradename	
+order by rs.movement	
+
+select * from reportsummary rs
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+limit 100
+
+select * from reportsummary
+
+SELECT F.Id, F.TradeName Tenant, P.Name NomeProduto, SUM (CONVERT(INT, OS.Amount)) Total, rs.total total
+	FROM [dbo].[Firm] F 	
+		LEFT JOIN [dbo].[Contract] C ON C.ContractorId = F.Id
+		LEFT JOIN [dbo].[Order] O ON O.ContractId = C.Id
+		LEFT JOIN [dbo].[OrderService] OS ON OS.OrderId = O.Id
+		LEFT JOIN [dbo].[ContractProduct] CP ON CP.Id = OS.ContractProductId		
+		LEFT JOIN [dbo].[Product] P ON P.Id = CP.ServiceProviderProductId
+		LEFT JOIN [dbo].[OrderServiceTag] OST ON OST.OrderService_Id = OS.Id
+		LEFT JOIN [dbo].[GroupingItemTag] GIT ON GIT.Tag_Id = OST.Tag_Id
+		
+		left join [dbo].[grouping] g on g.id = GIT.GroupingItem_Id
+		LEFT JOIN [dbo].[ReportSummary] RS ON RS.GroupingId = g.id
+		--left join [dbo].[grouping] g on g.id = rs.groupingid
+		--left join [dbo].[grouping] g on g.id = rs.groupingid		
+		--LEFT JOIN [dbo].[GroupingItem] GI ON GI.Id = GIT.GroupingItem_Id	
+		
+		WHERE C.Title = 'D1.CX Contract' and o.MovementDate >= '2021-11-01' and o.MovementDate <= '2021-11-30' 
+		and f.TradeName = 'Prevent Senior'
+		group by F.Id, F.TradeName, P.Name, rs.total
+
+	select ff.id, ff.tradeName as tenant, rs.movement, gi.title, f.tradename as provider, sum(rs.amount) amount, sum(rs.total) total from reportsummary rs		
+left join [dbo].[grouping] g on g.id = rs.groupingid		
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid		
+left join firm f on f.id = rs.providerId		
+left join firm ff on ff.id = g.contractorId		
+where g.contractorid = 22		
+and rs.movement between '2021-08-01 00:00:00.000' and '2021-08-30 00:00:00.000'		
+group by ff.id, ff.tradename, gi.title, rs.movement, f.tradename		
+order by rs.movement
+
+
+[
+
+
+SELECT F.Id, F.TradeName Tenant,CP.Id, P.Name NomeProduto, SUM(CONVERT(INT, OS.Amount)) Total, (SUM(CONVERT(INT, OS.Amount))*MAX(PR.Value)) Valor --(SUM (CONVERT(INT, OS.Amount)) * MAX(PR.Value)) Valor
+	FROM [dbo].[Firm] F 	
+		LEFT JOIN [dbo].[Contract] C ON C.ContractorId = F.Id
+		LEFT JOIN [dbo].[Order] O ON O.ContractId = C.Id
+		LEFT JOIN [dbo].[OrderService] OS ON OS.OrderId = O.Id
+		LEFT JOIN [dbo].[ContractProduct] CP ON CP.Id = OS.ContractProductId		
+		LEFT JOIN [dbo].[Product] P ON P.Id = CP.ServiceProviderProductId
+		LEFT JOIN [dbo].[OrderServiceTag] OST ON OST.OrderService_Id = OS.Id
+		LEFT JOIN [dbo].[GroupingItemTag] GIT ON GIT.Tag_Id = OST.Tag_Id
+		LEFT JOIN [dbo].[PriceRange] PR ON PR.ContractProductId = CP.Id
+		--LEFT JOIN [dbo].[GroupingItem] GI ON GI.Id = GIT.GroupingItem_Id	
+		WHERE C.Title = 'D1.CX Contract' and o.MovementDate >= '2021-11-01' and o.MovementDate <= '2021-11-30' 
+		and f.TradeName = 'Prevent Senior'
+		group by F.Id, F.TradeName,CP.Id, P.Name
+
+CREATE VIEW [dbo].[V_Dados_Billing_GoodData] AS
+	SELECT F.Id, CONVERT(DATE, o.MovementDate) DataMovimento, F.TradeName Tenant, P.Name NomeProduto, CONVERT(INT, OS.Amount) Total, (SUM(CONVERT(INT, OS.Amount)) * MAX(PR.Value))
+		FROM [dbo].[Firm] F 	
+			LEFT JOIN [dbo].[Contract] C ON C.ContractorId = F.Id
+			LEFT JOIN [dbo].[Order] O ON O.ContractId = C.Id
+			LEFT JOIN [dbo].[OrderService] OS ON OS.OrderId = O.Id
+			LEFT JOIN [dbo].[ContractProduct] CP ON CP.Id = OS.ContractProductId		
+			LEFT JOIN [dbo].[Product] P ON P.Id = CP.ServiceProviderProductId
+			LEFT JOIN [dbo].[OrderServiceTag] OST ON OST.OrderService_Id = OS.Id
+			LEFT JOIN [dbo].[GroupingItemTag] GIT ON GIT.Tag_Id = OST.Tag_Id
+			LEFT JOIN [dbo].[PriceRange] PR ON PR.ContractProductId = CP.Id
+			WHERE C.Title = 'D1.CX Contract' and o.MovementDate > '2021-08-01' 
+			
+
+SELECT TOP 4 * FROM [dbo].[ContractProduct] CP
+SELECT TOP 4 * FROM [dbo].[PriceRange]
+SELECT TOP 4 * FROM [dbo].[ContractProduct] CP left join [dbo].[PriceRange] PR ON CP.Id = PR.ContractProductId
+SELECT TOP 4 * FROM [dbo].[ContractProduct] CP left join [dbo].[PriceRange] PR ON CP.Id = PR.ContractProductId
+WHERE PR.ContractProductId IS NULL
+
+SELECT TOP 4 * FROM [dbo].[OrderServiceTag] OST
+SELECT TOP 4 * FROM [dbo].[GroupingItemTag] GIT
+SELECT TOP 4 * FROM [dbo].[OrderServiceTag] OST left join [dbo].[GroupingItemTag] GIT ON OST.Tag_Id = GIT.Tag_Id 
+SELECT TOP 4 * FROM [dbo].[OrderServiceTag] OST left join [dbo].[GroupingItemTag] GIT ON OST.Tag_Id = GIT.Tag_Id
+WHERE GIT.Tag_Id IS NULL
+
+
+SELECT TOP 4 * FROM [dbo].[ContractProduct] CP
+SELECT TOP 4 * FROM [dbo].[PriceRange]
+SELECT TOP 4 * FROM [dbo].[ContractProduct] CP left join [dbo].[PriceRange] PR ON CP.Id = PR.ContractProductId
+SELECT TOP 4 * FROM [dbo].[ContractProduct] CP left join [dbo].[PriceRange] PR ON CP.Id = PR.ContractProductId
+WHERE PR.ContractProductId IS NULL
+--
+SELECT TOP 4 * FROM [dbo].[OrderServiceTag] OST
+SELECT TOP 4 * FROM [dbo].[GroupingItemTag] GIT
+SELECT TOP 4 * FROM [dbo].[OrderServiceTag] OST left join [dbo].[GroupingItemTag] GIT ON OST.Tag_Id = GIT.Tag_Id 
+SELECT TOP 4 * FROM [dbo].[OrderServiceTag] OST left join [dbo].[GroupingItemTag] GIT ON OST.Tag_Id = GIT.Tag_Id
+WHERE GIT.Tag_Id IS NULL -- não roda
+--
+SELECT TOP 4 * FROM [dbo].[OrderService] OS
+SELECT TOP 4 * FROM [dbo].[OrderServiceTag] OST
+SELECT TOP 100 * FROM [dbo].[OrderService] OS left join [dbo].[OrderServiceTag] OST ON OS.Id = OST.Tag_Id 
+SELECT TOP 4 * FROM [dbo].[OrderService] OS left join [dbo].[OrderServiceTag] OST ON OS.Id = OST.Tag_Id 
+WHERE OST.Tag_Id IS NULL
+
+SELECT TOP 4 * FROM [dbo].[Firm] F
+SELECT TOP 4 * FROM [dbo].[Contract] C
+SELECT TOP 4 * FROM [dbo].[Firm] F left join [dbo].[Contract] C ON F.Id = C.ContractorId
+SELECT TOP 4 * FROM [dbo].[Firm] F left join [dbo].[Contract] C ON F.Id = C.ContractorId
+WHERE C.ContractorId IS NULL -- interessante
+
+SELECT TOP 4 * FROM [dbo].[Contract] C
+SELECT TOP 4 * FROM [dbo].[Order] O 
+SELECT TOP 4 * FROM [dbo].[Contract] C left join [dbo].[Order] O  ON C.ID = O.ContractId
+SELECT TOP 4 * FROM [dbo].[Contract] C left join [dbo].[Order] O  ON C.ID = O.ContractId
+WHERE C.ContractorId IS NULL -- Bad
+--
+SELECT TOP 4 * FROM [dbo].[Order] O 
+SELECT TOP 4 * FROM [dbo].[OrderService] OS
+SELECT TOP 4 * FROM [dbo].[Order] O left join [dbo].[OrderService] OS  ON O.Id = OS.OrderId
+SELECT TOP 4 * FROM [dbo].[Order] O left join [dbo].[OrderService] OS  ON O.Id = OS.OrderId
+WHERE OS.OrderId IS NULL -- ORDERSERVICE TRAZ QUANTIDADES
+
+SELECT TOP 4 * FROM [dbo].[OrderService] OS
+SELECT TOP 4 * FROM [dbo].[PriceRange]
+SELECT TOP 4 * FROM [dbo].[ContractProduct]
+
+[dbo].[OrderService] OS ON OS.OrderId = O.Id
+[dbo].[Order] O ON O.ContractId = C.Id
+
+SELECT F.Id, F.TradeName Tenant, P.Name NomeProduto, SUM (OS.Amount) Total
+	FROM [dbo].[Firm] F 	
+		LEFT JOIN [dbo].[Contract] C ON C.ContractorId = F.Id
+		LEFT JOIN [dbo].[Order] O ON O.ContractId = C.Id
+		LEFT JOIN [dbo].[OrderService] OS ON OS.OrderId = O.Id
+		LEFT JOIN [dbo].[ContractProduct] CP ON CP.Id = OS.ContractProductId		
+		LEFT JOIN [dbo].[Product] P ON P.Id = CP.ServiceProviderProductId
+		LEFT JOIN [dbo].[OrderServiceTag] OST ON OST.OrderService_Id = OS.Id
+		LEFT JOIN [dbo].[GroupingItemTag] GIT ON GIT.Tag_Id = OST.Tag_Id
+		--LEFT JOIN [dbo].[ReportSummary] RS ON RS.GroupingId = F.Id
+		RIGHT JOIN [dbo].[PriceRange] PR ON PR.ContractProductId = CP.Id
+		--LEFT JOIN [dbo].[GroupingItem] GI ON GI.Id = GIT.GroupingItem_Id	
+		WHERE PR.ContractProductId IS NULL and Title = 'D1.CX Contract' and o.MovementDate >= '2021-11-01' and o.MovementDate <= '2021-11-30' 
+		and f.Id = '135'
+		group by F.Id, F.TradeName, P.Name 
+		order by P.Name
+
+SELECT F.Id, F.TradeName Tenant, P.Name NomeProduto, SUM (OS.Amount) Total
+	FROM [dbo].[Firm] F 	
+		LEFT JOIN [dbo].[Contract] C ON C.ContractorId = F.Id
+		LEFT JOIN [dbo].[Order] O ON O.ContractId = C.Id
+		LEFT JOIN [dbo].[OrderService] OS ON OS.OrderId = O.Id
+		LEFT JOIN [dbo].[ContractProduct] CP ON CP.Id = OS.ContractProductId		
+		LEFT JOIN [dbo].[Product] P ON P.Id = CP.ServiceProviderProductId
+		LEFT JOIN [dbo].[OrderServiceTag] OST ON OST.OrderService_Id = OS.Id
+		LEFT JOIN [dbo].[GroupingItemTag] GIT ON GIT.Tag_Id = OST.Tag_Id
+		--LEFT JOIN [dbo].[ReportSummary] RS ON RS.GroupingId = F.Id
+		RIGHT JOIN [dbo].[PriceRange] PR ON PR.ContractProductId = CP.Id
+		--LEFT JOIN [dbo].[GroupingItem] GI ON GI.Id = GIT.GroupingItem_Id	
+		WHERE Title = 'D1.CX Contract' and o.MovementDate >= '2021-11-01' and o.MovementDate <= '2021-11-30' 
+		and f.Id = '135'
+		group by F.Id, F.TradeName, P.Name 
+		order by P.Name
+		
+-- Encontrado o motivo da multiplicação por 6, Quantidade de preços cadastrados
+	SELECT F.Id, PR.Value, PR.Maximum, PR.Minimum, PR.ContractProductId, F.TradeName Tenant, CP.Id, P.Name NomeProduto, SUM(OS.Amount) Total--, (SUM(OS.Amount) * MAX(PR.Value)) valor
+		FROM [dbo].[Firm] F 	
+			LEFT JOIN [dbo].[Contract] C ON C.ContractorId = F.Id
+			LEFT JOIN [dbo].[Order] O ON O.ContractId = C.Id
+			LEFT JOIN [dbo].[OrderService] OS ON OS.OrderId = O.Id
+			LEFT JOIN [dbo].[ContractProduct] CP ON CP.Id = OS.ContractProductId
+			
+			LEFT JOIN [dbo].[Product] P ON P.Id = CP.ServiceProviderProductId
+			LEFT JOIN [dbo].[OrderServiceTag] OST ON OST.OrderService_Id = OS.Id
+			LEFT JOIN [dbo].[GroupingItemTag] GIT ON GIT.Tag_Id = OS.Id
+			LEFT JOIN [dbo].[GroupingItem] GI ON GI.Id = GIT.GroupingItem_Id	
+			LEFT JOIN [dbo].[PriceRange] PR ON PR.ContractProductId = CP.Id
+			WHERE C.Title = 'D1.CX Contract' and o.MovementDate >= '2021-10-01' and o.MovementDate <= '2021-10-30' 
+			and f.Id = '135'
+			group by F.Id, F.TradeName, CP.Id,  P.Name, PR.Value, PR.ContractProductId, PR.Maximum, PR.Minimum--, OS.Amount 
+			order by p.name
+			
+-- DEU CERTO - Valores x Quantidades - Com Filtro
+CREATE VIEW [dbo].[V_Dados_Billing_GoodDataV3] AS select ff.id, ff.tradeName as Tenant, rs.movement, gi.title NomeProduto, f.tradename as provider, sum(rs.amount) amount, sum(rs.total) total from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm f on f.id = rs.providerId	
+left join firm ff on ff.id = g.contractorId	
+where ff.Id = 135 	
+and rs.movement between '2021-11-01 00:00:00.000' and '2021-11-30 00:00:00.000'	
+group by rs.movement, ff.id, ff.tradename, gi.title, rs.movement, f.tradename	
+--order by rs.movement
+
+-- DEU CERTO - Valores x Quantidades - Sem Filtro
+CREATE VIEW [dbo].[V_Dados_Billing_GoodDataV4] AS select CONVERT(DATE, rs.movement) DataMovimento, ff.id, ff.tradeName Tenant, gi.title NomeProduto, sum(CONVERT(INT, rs.amount)) Quantidade, sum(rs.total) Valor from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm f on f.id = rs.providerId	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement >= '2021-08-01 00:00:00.000' 	
+group by rs.movement, ff.id, ff.tradename, gi.title, rs.movement, f.tradename

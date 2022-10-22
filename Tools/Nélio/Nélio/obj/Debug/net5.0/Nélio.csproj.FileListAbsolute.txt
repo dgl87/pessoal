@@ -1,0 +1,16 @@
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\obj\Debug\net5.0\Nélio.csproj.AssemblyReference.cache
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\obj\Debug\net5.0\Nélio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\obj\Debug\net5.0\Nélio.AssemblyInfoInputs.cache
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\obj\Debug\net5.0\Nélio.AssemblyInfo.cs
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\obj\Debug\net5.0\Nélio.csproj.CoreCompileInputs.cache
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\bin\Debug\net5.0\Nélio.exe
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\bin\Debug\net5.0\Nélio.deps.json
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\bin\Debug\net5.0\Nélio.runtimeconfig.json
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\bin\Debug\net5.0\Nélio.runtimeconfig.dev.json
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\bin\Debug\net5.0\Nélio.dll
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\bin\Debug\net5.0\ref\Nélio.dll
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\bin\Debug\net5.0\Nélio.pdb
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\obj\Debug\net5.0\Nélio.dll
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\obj\Debug\net5.0\ref\Nélio.dll
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\obj\Debug\net5.0\Nélio.pdb
+C:\Users\Douglas\Desktop\Tools\Nélio\Nélio\obj\Debug\net5.0\Nélio.genruntimeconfig.cache

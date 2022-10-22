@@ -1,0 +1,32 @@
+1o criar  a tabela v2 -> validar o script no tenantonboard - OK
+
+2o - virar a chave antes de iniciar o processamento para já gravar na v2 (tirar do deploy o tenantname da variavel v1  - vuc e cloudrun enrich)  1-esteira ci/cd - 2-migrar na configuração do serviço em prod
+
+3o Gerar na mão no BQ o arquivo da v1 - OK
+
+4o - Baixar arquivos na mão (Dica => Baixar todos os arquivos do bucket com comando https://dev.azure.com/directoneapp/Thanos/_wiki/wikis/Engineering/45/-WIP-Download-m%C3%BAltiplos-arquivos-do-Google-Bucket) - OK
+
+5o - Modificar o script para fazer Loop na pasta - 
+
+6o - processou muda o arquivo de pasta
+
+-------
+mudança no DoWork migrateservice.cs
+tirar o if processed e dropped gerando sem o created - OK
+-------
+
+novo método
+fazer um método pegar o shooting e gerar todos os creates - Criando
+-------
+
+*********Fazer de uma forma que reinicia o processamento de onde parou****
+
+*********começar do tenant menor pro maior
+
+*********validar eventos que existem na v1 antes de começar, ver se algum evento não existe no enum ver no video de onde o piga o tirou o enum
+
+*********ver com o piga se realmente vamos importar o evento RcsCompatible
+
+*********ver com a gabi a hora que vamos processar
+
+*********validar -> migrar um e validar com o piga nessa migração não vamos virar a chave

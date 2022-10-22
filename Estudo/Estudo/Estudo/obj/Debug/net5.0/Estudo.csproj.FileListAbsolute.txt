@@ -1,0 +1,16 @@
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\bin\Debug\net5.0\Estudo.exe
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\bin\Debug\net5.0\Estudo.deps.json
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\bin\Debug\net5.0\Estudo.runtimeconfig.json
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\bin\Debug\net5.0\Estudo.runtimeconfig.dev.json
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\bin\Debug\net5.0\Estudo.dll
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\bin\Debug\net5.0\ref\Estudo.dll
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\bin\Debug\net5.0\Estudo.pdb
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\obj\Debug\net5.0\Estudo.csproj.AssemblyReference.cache
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\obj\Debug\net5.0\Estudo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\obj\Debug\net5.0\Estudo.AssemblyInfoInputs.cache
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\obj\Debug\net5.0\Estudo.AssemblyInfo.cs
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\obj\Debug\net5.0\Estudo.csproj.CoreCompileInputs.cache
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\obj\Debug\net5.0\Estudo.dll
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\obj\Debug\net5.0\ref\Estudo.dll
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\obj\Debug\net5.0\Estudo.pdb
+C:\Users\Douglas\Desktop\Estudo\Estudo\Estudo\obj\Debug\net5.0\Estudo.genruntimeconfig.cache

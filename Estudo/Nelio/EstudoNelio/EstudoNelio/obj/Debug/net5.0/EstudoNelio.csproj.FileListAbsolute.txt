@@ -1,0 +1,16 @@
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\bin\Debug\net5.0\EstudoNelio.exe
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\bin\Debug\net5.0\EstudoNelio.deps.json
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\bin\Debug\net5.0\EstudoNelio.runtimeconfig.json
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\bin\Debug\net5.0\EstudoNelio.runtimeconfig.dev.json
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\bin\Debug\net5.0\EstudoNelio.dll
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\bin\Debug\net5.0\ref\EstudoNelio.dll
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\bin\Debug\net5.0\EstudoNelio.pdb
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\obj\Debug\net5.0\EstudoNelio.csproj.AssemblyReference.cache
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\obj\Debug\net5.0\EstudoNelio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\obj\Debug\net5.0\EstudoNelio.AssemblyInfoInputs.cache
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\obj\Debug\net5.0\EstudoNelio.AssemblyInfo.cs
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\obj\Debug\net5.0\EstudoNelio.csproj.CoreCompileInputs.cache
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\obj\Debug\net5.0\EstudoNelio.dll
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\obj\Debug\net5.0\ref\EstudoNelio.dll
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\obj\Debug\net5.0\EstudoNelio.pdb
+C:\Users\Douglas\Desktop\Estudo\Nelio\EstudoNelio\EstudoNelio\obj\Debug\net5.0\EstudoNelio.genruntimeconfig.cache

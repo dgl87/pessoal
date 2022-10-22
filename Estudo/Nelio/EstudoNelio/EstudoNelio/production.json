@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "journey-event-process-prod",
+  "private_key_id": "d6567121bae0bdab27e8424da29c258958af74b0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC9UTtrpy+VByNT\nz9VgKP/MmonVtrJsUiL029cCc+iUG+SwL5lZb1aLETjaCDXSwiru5oK1DbMqFqmZ\nsOS74wGHfzKGUJw42DdbFZLTnDGrzOZiczX3yQScU1MSUFHBSaRkzT52GpXsyz7e\nGRoLseP49p7tzemUUKx6R8xhurW90xGr4jVQmmwowN/yUrs/ER6GI1w9HlV8uBSg\nxSBAoIAIBt5+zZg1iYbQE6sB2u0CBvdwNsgtE69sBVzcyUrO7sXplvyQ5N4EO/NA\nIpll56tIZ0ehNkqTOPRMS4NyPUobbixCmYWdefuyMeSGnqtUVI1bEr2zQqmNh8WW\ndtYkbAThAgMBAAECggEACiFWIiO55pS8CF3nJ4maF9CEeUnuOzXxRpPwPzfaOqP8\nH+IJfSEkNYslinkvqXLtXtzjzUdfORcpr8ko5tWLUpJKWaiSQMfFEoZ8Kv7rzisd\nKtMfu1Nnf+vvgTEzZrnc5kNF89uRU9s+UR5xEoN21O7GwKfTjLWnvQqpfj3s6qwl\n4sdd1EaOC7AHvwmku7+MnSQN/NLBzBK2Et2K78KD0YarLgCNCmv50gtQUrN6wBBH\nMCFJPMkqL8pkh2eOAmArQtzLW8ZpXqkiHPSP5Y4ui2Vv8QUKJ0lt1dg2eNrrOpNF\nj9jSfhAwM5pGy1/MGG30xp1OLR0Q2f9fNwV3HvxEjwKBgQDsKpw17qxW9QtKAK1H\nGobRSTfnOaB2eL986kezle/EKAaBxQS6MpCzlTbOKuSbx0gXH82QRgKelsvcog4i\nghM+ScWxJZzbI9LjPSYTzYQ6G/bG8Mrtzl3sBnoKnLU7skBu89oaBg2NHNdnnBuj\nXVOk9O3VCD8yiVi+koVTT0lVIwKBgQDNN2crGW/dunZfTFhYdYzLNeMjSVjpeqgl\n0IfH2K8iY4lq4BSv5tdfjzeNCX4pjPdcMLG6wzsK/wLyQjICHSzg8BoJFL530V9C\nsRdyCOaLG3r6WOruE53vLVjzHetUoznfMgfS8anB2wWPQKIkxXHZQilHopztI2+U\np/AKaPHoKwKBgEk/4hmcQJnsASdf1F7UbHJnWk5+gjWcuA/ffoPGAor9ux7u48t4\nuYbpxgjmJufmRIbfl1ujS1azAOIa5XVwkNVl/ko2l1Mk5lkS80d7HAMF/2Gu99IQ\nivMVAy9dcZzlabTAL6qYrAVTp7/8HFpsLPBiA45qs2dSUFMzkOTJF76vAoGACvmo\nkdyFaBVd2VDq9KgsxH14TV3R3ILL1WHmsSB8lVk/czDSymmNITY2oVtdnPlGDW8p\nQjTIxpjG3o/9vrEywkD1E4FBgoT3FEkGWPny4oOwuwzgW6U+8Bi7xhzWhitIoBA7\n7OMx0gVVsciiI1dP9G+eZ49h1yjrAcdNhjEApwsCgYB2n090+A8+nT7njpkum99M\nkyIJpdMs6RvEKL335i8UFHQwWC60p9/qOr5KZBgJE76PvzbfbUcRcF2QiIiLDwxp\nKDPqi/5Y96D6u3jotZiQKXdMpvTzFrjzX/YsQfWgEEZTp7XIsQhDQT0cHaJnaczk\nv9wUX/oWrP1npC4K38KftQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "pub-sub-access@journey-event-process-prod.iam.gserviceaccount.com",
+  "client_id": "106741096517960348333",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pub-sub-access%40journey-event-process-prod.iam.gserviceaccount.com"
+}

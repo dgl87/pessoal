@@ -1,0 +1,73 @@
+##Payload de disparo com documento Zenvia
+{
+	"journeyId": "5e8794ae6353ea1484f8b4ba",
+	"customer": {
+		"id": "171.139.987-63",
+		"name": "Mylena Cordeiro de Sousa",
+		"emails": [
+			{
+				"address": "jadriano@direct.one",
+				"kind": "comercial"
+			},
+			{
+				"address": "amauri@direct.one",
+				"kind": "comercial"
+			}
+		],
+		"documents": {
+			"cpf": "171.139.987-63"
+		},
+		"phones": [
+			{
+				"number": "+55 (11) 96770-2718",
+				"kind": "cellphone"
+			},
+			{
+				"number": "+55 (11) 95125-8871",
+				"kind": "cellphone"
+			}
+		]
+	},
+	"variables": {
+		"var_primeiro_nome": "MYLENA",
+		"var_certificado": "4646430",
+		"var_nome_do_produto": "SINAF PROTEÇÃO FAMÍLIA NV",
+		"var_plano": "RM3- 003- LUXO",
+		"var_vigencia": "14/10/2021  a 14/10/2022",
+		"var_forma_pagamento": "Cartão de Crédito",
+		"var_parcela": "23,24",
+		"var_vencimento": "14",
+		"var_atencao": "Mensalmente a Sinaf irá debitar no cartão de crédito informado o valor da sua parcela, no dia de vencimento escolhido por você. Caso o débito não seja autorizado, enviaremos por mensagem de texto ou e-mail um boleto apenas para o pagamento desta parcela e as mensalidades seguintes voltarão a ser debitadas no mesmo cartão de crédito.<br><br> Se isto ocorrer verifique se o seu cartão de crédito está válido e, se necessário, entre em contato com a nossa Central de Atendimento:<br>0800 702 9910."
+	},
+	"properties": {
+		"prop_d1cx_defaultShortenerDomain": "sin.af"
+	},
+	"files": [
+		{
+			"type": "Storage",
+			"mode": "Link",
+			"isMain": true,
+			"storagePath": "/sinafseguros/kit/22102021_00493/certificado_sinaf_41_22102021_00493_7526641_4646430.pdf",
+			"filename": "certificado_sinaf_41_22102021_00493_7526641_4646430.pdf",
+			"description": "Certificado",
+			"documentNumber": "7526641",
+			"correlationId": "CERTIFICADO_SINAF_41_22102021_00493_7526641_4646430",
+			"total": "23,24",
+			"tags": [
+				"Certificado"
+			],
+			"nodes": [
+				{
+					"name": "WHATSAPP",
+					"mode": "Link"
+				},
+				{
+					"name": "SMS",
+					"mode": "Link"
+				}
+			]
+		}
+	],
+	"correlationId": "{{$guid}}",
+	"versionId": "Kit Digital 41 - Cert Boas Vindas CC - WHATSAPP_SMS"
+}

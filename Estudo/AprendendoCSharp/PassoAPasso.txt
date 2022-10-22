@@ -1,0 +1,7 @@
+1 - Escreva seu código c# no bloco de notas
+2 - Abra o CMD e entre no caminho onde está guardado seu arquivo c#
+3 - No diretório do arquivo c#, execute o csc.exe informando o arquivo à ser compilado, como por exemplo:
+	C:\Users\Douglas\Desktop\Estudo\AprendendoCSharp>C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe MeuPrimeiroPrograma.txt
+	Neste momento será compilado seu programa c#, gerando um arquivo .exe no mesmo diretório onde está seu arquivo de texto escrito o código c#
+4 - Execute seu código com o comando:
+	C:\Users\Douglas\Desktop\Estudo\AprendendoCSharp>MeuPrimeiroPrograma.exe

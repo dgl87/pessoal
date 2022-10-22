@@ -1,0 +1,16 @@
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\bin\Debug\net5.0\07Construtor.exe
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\bin\Debug\net5.0\07Construtor.deps.json
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\bin\Debug\net5.0\07Construtor.runtimeconfig.json
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\bin\Debug\net5.0\07Construtor.runtimeconfig.dev.json
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\bin\Debug\net5.0\07Construtor.dll
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\bin\Debug\net5.0\07Construtor.pdb
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\obj\Debug\net5.0\07Construtor.csproj.AssemblyReference.cache
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\obj\Debug\net5.0\07Construtor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\obj\Debug\net5.0\07Construtor.AssemblyInfoInputs.cache
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\obj\Debug\net5.0\07Construtor.AssemblyInfo.cs
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\obj\Debug\net5.0\07Construtor.csproj.CoreCompileInputs.cache
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\obj\Debug\net5.0\07Construtor.dll
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\obj\Debug\net5.0\refint\07Construtor.dll
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\obj\Debug\net5.0\07Construtor.pdb
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\obj\Debug\net5.0\07Construtor.genruntimeconfig.cache
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\07Construtor\obj\Debug\net5.0\ref\07Construtor.dll

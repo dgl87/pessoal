@@ -1,0 +1,101 @@
+
+
+//Pesquisa created por range de data
+db.shooting.find({
+    created: {
+        $gte: ISODate("2021-07-29T17:33:50.790+0000"),
+        $lte: ISODate("2022-04-14T22:28:46.901")
+    }
+});
+
+//Verifica se existe o kit.id em algum documento
+db.customer.find({
+    "kits.id": {
+        $exists: true
+    }
+});
+
+//Localiza utilizando filtro e range de data
+db.blobEvent.caedu.find({
+    "metadata.movementId": "08032022_00140",
+    "metadata.tenantExternalKey": "CAEDU",
+    "inserted": {
+        $gte: ISODate("2022-03-09T00:00:00.000+0000"),
+        $lte: ISODate("2022-03-09T23:59:59.999+0000")
+    }
+    ,
+    "metadata.total": 1
+});
+
+Verificando se um campo contém uma string
+{"webVersionAddress": {$regex : "ccmpdf"}}
+{"webVersionAddress": {$regex : "fs.direct.one"}}
+{ "kits.mainDocument.webVersionAddress": {$regex : "ccmpdf"}}
+{ "kits.mainDocument.webVersionAddress": {$regex : "fs.direct.one"}}
+
+>db.posts.find({post_text:{$regex:"w3cschool.cc"}})
+>db.posts.find({post_text:/w3cschool.cc/})
+
+##Like em Mongo
+inserts = 
+
+db.users.insert({name: 'paulo'});
+
+db.users.insert({name: 'patric'})
+
+db.users.insert({name: 'pedro'})
+
+pesquisas =
+
+db.users.find({name: /a/})  //like '%a%'
+saída: paulo, **patric**
+
+db.users.find({name: /^pa/}) //like 'pa%' 
+saída: **paulo, patric**
+
+db.users.find({name: /ro$/}) //like '%ro'
+saída: **pedro**
+
+//return _items.find({$text: {$search: /Sorriso/} }); que contenham a palavra  Sorriso
+
+----------------
+MySQL
+
+SELECT * FROM users WHERE username LIKE "%Son%"
+
+MongoDB
+
+db.users.find({username:/Son/})
+
+If you want the query to be case-sensitive
+
+db.getCollection("users").find({'username':/Son/})
+
+If you want the query to be case-insensitive
+
+db.getCollection("users").find({'username':/Son/i})
+---------------
+
+Transpromo
+https://dev.azure.com/directoneapp/AppD1V2/_git/directone.app.transpromo
+
+appd1  
+https://dev.azure.com/directoneapp/AppD1V1/_git/directone.onetoone
+
+https://docs.google.com/spreadsheets/d/1-QsPGTZUXYb9E5TMQwSqCKiPOqF11uYvnUrt5Ety80E/edit#gid=56497037 - Aba Anderson
+Avisar o Fábio sobre a planilha
+
+https://whimsical.com/a
+radio garden
+
+
+db.blobEvent.milla.remove({
+    "created" : {
+        $gte : ISODate("2022-06-28T00:50:31.000+0000"),
+        $lte : ISODate("2022-06-28T23:06:07.000+0000")
+    }
+    ,
+    "metadata.movementId" : "28062022_00068"
+}).sort({
+    _id:-1
+});

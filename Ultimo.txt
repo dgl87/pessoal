@@ -1,0 +1,35 @@
+Name			TenantId
+somposegurossa		5b0862830829721a008d380b
+
+
+select 'Dezembro' AS Mes, ff.id Id, ff.tradeName Tenant, SUM((CONVERT(INT, rs.amount))) Quantidade, sum(rs.total) Valor 
+from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm f on f.id = rs.providerId	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement between '2021-12-01 00:00:00.000' and '2021-12-31 00:00:00.000' and gi.title != 'total' and ff.tradeName like '%allied%'
+group by ff.id, ff.tradeName
+order by ff.tradeName
+
+
+	SELECT F.Id, CONVERT(DATE, o.MovementDate) DataMovimento, F.TradeName Tenant, P.Name NomeProduto, CONVERT(INT, OS.Amount) Total
+		FROM [dbo].[Firm] F 	
+			LEFT JOIN [dbo].[Contract] C ON C.ContractorId = F.Id
+			LEFT JOIN [dbo].[Order] O ON O.ContractId = C.Id
+			LEFT JOIN [dbo].[OrderService] OS ON OS.OrderId = O.Id
+			LEFT JOIN [dbo].[ContractProduct] CP ON CP.Id = OS.ContractProductId		
+			LEFT JOIN [dbo].[Product] P ON P.Id = CP.ServiceProviderProductId
+			LEFT JOIN [dbo].[OrderServiceTag] OST ON OST.OrderService_Id = OS.Id
+			LEFT JOIN [dbo].[GroupingItemTag] GIT ON GIT.Tag_Id = OST.Tag_Id
+			WHERE C.Title = 'D1.CX Contract' and o.MovementDate > '2021-08-01' and  != total-- and f.tradeName like '%allied%'
+			--where rs.movement between '2021-12-01 00:00:00.000' and '2021-12-31 00:00:00.000' and f.tradeName like '%allied%'
+
+
+select CONVERT(DATE, rs.movement) DataMovimento, ff.id, ff.tradeName Tenant, gi.title NomeProduto, sum(CONVERT(INT, rs.amount))Quantidade, sum(rs.total) Valor from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm f on f.id = rs.providerId	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement >= '2021-08-01 00:00:00.000' 	
+group by rs.movement, ff.id, ff.tradename, gi.title, rs.movement, f.tradename

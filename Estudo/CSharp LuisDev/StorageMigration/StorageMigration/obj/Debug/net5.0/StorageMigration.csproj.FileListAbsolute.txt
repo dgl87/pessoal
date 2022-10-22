@@ -1,0 +1,16 @@
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\obj\Debug\net5.0\StorageMigration.csproj.AssemblyReference.cache
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\obj\Debug\net5.0\StorageMigration.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\obj\Debug\net5.0\StorageMigration.AssemblyInfoInputs.cache
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\obj\Debug\net5.0\StorageMigration.AssemblyInfo.cs
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\obj\Debug\net5.0\StorageMigration.csproj.CoreCompileInputs.cache
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\bin\Debug\net5.0\StorageMigration.exe
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\bin\Debug\net5.0\StorageMigration.deps.json
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\bin\Debug\net5.0\StorageMigration.runtimeconfig.json
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\bin\Debug\net5.0\StorageMigration.runtimeconfig.dev.json
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\bin\Debug\net5.0\StorageMigration.dll
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\bin\Debug\net5.0\ref\StorageMigration.dll
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\bin\Debug\net5.0\StorageMigration.pdb
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\obj\Debug\net5.0\StorageMigration.dll
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\obj\Debug\net5.0\ref\StorageMigration.dll
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\obj\Debug\net5.0\StorageMigration.pdb
+C:\Users\Douglas\Desktop\Estudo\CSharp LuisDev\StorageMigration\StorageMigration\obj\Debug\net5.0\StorageMigration.genruntimeconfig.cache

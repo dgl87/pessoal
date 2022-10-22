@@ -1,0 +1,45 @@
+connection
+
+PRD
+PRD: Storage
+mongodb://dpaiva:l6lA%23*e59C%23T*YaR@domongofba1prd.direct.one:46324,domongofba2prd.direct.one:32165,domongofbabprd.direct.one:33125,domongofbarbiterprd.direct.one:28632/admin?readPreference=primary&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1
+
+PRD: Journey Admin Settings
+mongodb://dpaiva:l6lA%23*e59C%23T*YaR@rsd1.d1.cx:19582,rsd2.d1.cx:26458,rsd3.d1.cx:34856/admin?readPreference=primary&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1
+
+PRD: Storage - appd1_storage
+mongodb://usr_appd1_storage:K5ESu5afGP63k25zHLpzyXDGPsmZkTZA@domongofba1prd.direct.one:46324,domongofba2prd.direct.one:32165,domongofbabprd.direct.one:33125,domongofbarbiterprd.direct.one:28632/admin?readPreference=primary&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1
+
+PROD: AzulSeguros
+mongodb://usr_onetoone_azulseguros:La24Hjg7QGm35Dc@domongoa1prd.direct.one:19751/admin?connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1
+
+PRD: OneToOne Root
+mongodb://usr_onetoone_root:WzOP5KPH31pnqhCU8bqutwmVFuVJaCCv@domongoc1prd.d1.cx:19582,domongoc2prd.d1.cx:23185,domongoc3prd.d1.cx:32451/admin?readPreference=primary&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1
+
+DEV
+DEV: Storage (Relationship)
+mongodb://usr_appd1_storage_dev:WZv2PADweCR9kraHwLlWYdJ3JTvLiU4IPvG1h@domongofba1dev.direct.one:33445,domongofba2dev.direct.one:33446,domongofba3dev.direct.one:33447/admin?readPreference=primary&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1
+
+DEV: Journey Admin Settings
+mongodb://usr_journey_adminsettings_dev:9Cb6oivgDig2ReFgZw8tpEQFzy@domongofba1dev.direct.one:33445/admin?connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1
+
+DEV: Approval Painel
+mongodb://usr_journey_approvalpanel_dev:RkbKpiSCInlIFw955vGLj6lhpZ5pgHRC@domongofba1dev.direct.one:33445,domongofba2dev.direct.one:33446,domongofba3dev.direct.one:33447/admin?readPreference=primary&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1
+
+DEV: Journey
+mongodb://usr_journey_directone_dev:3GD8ZpFD3rRF7r4k0bOV5IK41x@domongofba1dev.direct.one:33445,domongofba2dev.direct.one:33446,domongofba3dev.direct.one:33447/admin?readPreference=primary&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1
+
+DEV: Jornada Luis
+mongodb://usr_journey_luis_dev:s3YRq57ZmAd86La@domongofba1dev.direct.one:33445,domongofba2dev.direct.one:33446,domongofba3dev.direct.one:33447/admin?readPreference=primary&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1
+
+DEV: OneToOne Root
+mongodb://usr_onetoone_dev:8nRT2RAAgJwbBgEAo@domongofba1dev.direct.one:33445,domongofba2dev.direct.one:33446,domongofba3dev.direct.one:33447/admin?readPreference=primary&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1
+
+STG
+STG: Storage
+mongodb://usr_appd1_storage_hml:AFd5aVFhU6A61w7gIgUxm4j6Dim4NoOH@domongofba1hml.direct.one:16897,domongofba2hml.direct.one:16907,domongofba3hml.direct.one:16917/admin?readPreference=primary&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1
+
+https://directoneapp.pkgs.visualstudio.com/_packaging/RogueOne/nuget/v3/index.json RogueOne
+https://pkgs.dev.azure.com/directoneapp/_packaging/OneToOneEngine/nuget/v3/index.json OneToOneEngine
+https://pkgs.dev.azure.com/directoneapp/_packaging/OneToOneEngine2/nuget/v3/index.json OneToOneEngine2
+https://api.nuget.org/v3/index.json nuget.org

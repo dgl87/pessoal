@@ -1,0 +1,11 @@
+{
+  "GOOGLE_CREDENTIALS_PATH": "./production.json",
+  "IsEnableJourneyEventV2": "True",
+  "DIDAGRPC_URI": "https://directone-app-journey-conmebol-didagrpc-jbp7ebpc5q-ue.a.run.app",
+  "PROJECT_ID": "journey-event-process-prod",
+  //"MIGRATE_DATA_PATH": "D://csv-migration-journey-v2/temp_dump-sinaf",
+  "MIGRATE_DATA_PATH": "E://migration/bandcard-dump-20211206113200/filesImported",
+  "RECOVERY_DATA_PATH": "e:/migration/bandcard-dump-20211206113200/",
+  "FILE_ORIGIN": "e:/migration/bandcard-dump-20211206113200/",
+  "FILE_COUNTER": "e:/migration/bandcard-dump-20211206113200"
+}

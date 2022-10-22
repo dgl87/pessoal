@@ -1,0 +1,79 @@
+#INJEÇÃO DE DEPENDÊNCIA
+> Geralmente configuramos os serviços na inicialização do app
+> Existem vários ciclos de vidas para nossos serviços / classes injetadas
+> Podemos injetar os nossos serviços de várias formas
+> Podemos consumir nossos serviços de várias formas, via Construtor, Atributo e IServiceProvider
+
+##Injeção de Dependência - Fluxo
+
+###Interface
+public interface IPessoa
+    {
+        Guid Id { get; set; }
+    }
+
+###Classe
+public class Pessoa : IPessoa
+    {
+        public Guid Id { get; set; }
+        public Pessoa()
+        {
+            Id = Guid.NewGuid();
+        }
+    }
+
+###Startup
+public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddScoped<IOperacao, Operacao>();
+        }
+
+###Injeção via Construtor
+[ApiController]
+[Route("[controller]")]
+public class PessoaAppController : ControllerBase
+{
+	private readonly IPessoa _pessoa;
+
+	public WeatherForecastController(IPessoa pessoa)
+	{
+		_pessoa = pessoa;
+	}
+
+	[HttpGet("construtor")]
+	public IActionResult Construtor()
+	{
+		return Ok(_pessoa.Id);
+	}
+}
+
+###Injeção via Atributo
+[ApiController]
+[Route("[controller]")]
+public class PessoaAppController : ControllerBase
+{
+	[HttpGet("atributo")]
+	public IActionResult Atributo([FromServices] IPessoa pessoa)
+	{
+		return Ok(pessoa.Id);
+	}
+}
+
+##Injeção via IServiceProvider
+[ApiController]
+[Route("[controller]")]
+public class PessoaAppController : ControllerBase
+{
+	private readonly IServiceProvider _provider;
+
+	public WeatherForecastController(IServiceProvider provider)
+	{
+		_provider = provider;
+	}
+
+	[HttpGet("iserviceprovider")]
+	public IActionResult IServiceProvider()
+	{
+		return Ok(_provider.GetRequiredService<IOperacao>());
+	}
+}

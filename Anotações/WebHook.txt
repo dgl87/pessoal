@@ -1,0 +1,68 @@
+{
+    "Files": [],
+    "journeyId": "62de9a85c24e7da8ddac345d",
+    "VersionId": null,
+    "customer": {
+        "id": "s",
+        "Name": "Pedro",
+        "NickName": null,
+        "PersonType": "natural",
+        "Gender": "male",
+        "MaritalStatus": "single",
+        "BirthDate": "2021-10-12T00:00:00Z",
+        "Documents": {
+            "Cpf": "123456",
+            "Cnpj": "123456",
+            "CredCard": null
+        },
+        "Addresses": [
+            {
+                "Street": "R Pouso Alto 4647 Casa",
+                "Number": null,
+                "Complement": null,
+                "Neighborhood": "Neopolis",
+                "City": "Natal",
+                "State": "NATAL",
+                "ZipCode": "59088-390",
+                "Country": {
+                    "Id": "76",
+                    "Name": "Brasil"
+                },
+                "Kind": "residential",
+                "Geocode": null
+            }
+        ],
+        "Emails": [
+            {
+                "Address": "pedro.silva@zenvia.com",
+                "Kind": "residential"
+            }
+        ],
+        "Phones": [
+            {
+                "AreaCode": null,
+                "CountryCode": null,
+                "Kind": "cellphone",
+                "Number": "+55 (21) 99170-2041",
+                "FormattedNumber": null
+            }
+        ]
+    },
+    "Movement": {
+        "Date": "2021-10-12T03:00:00Z",
+        "FileName": "S5310000001904322994000000000001920210517.JSON",
+        "Lot": "01210"
+    },
+    "Variables": {
+        "text1": "test1",
+        "text2": "test2",
+        "text3": "test3"
+    },
+    "Documents": [],
+    "DigitalAccept": null,
+    "CorrelationId": "{{$guid}}",
+    "ScheduleDate": null,
+    "IsTest": false,
+    "Id": null,
+    "Created": "0001-01-01T00:00:00"
+}

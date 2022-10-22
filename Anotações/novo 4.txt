@@ -1,0 +1,57 @@
+Bradesco Seguros Tabela criada anteriormente
+Sinaf Tabela criada pelo Johnny 
+Porto Seguro Tabela criada
+Sompo Tabela criada
+Pernambucanas Tabela criada
+Pefisa Tabela criada
+Porto Odonto Tabela criada
+Qualicorp - Empresarial Tabela criada
+Qualicorp - Seguros Tabela criada
+
+[{"name": "created","type": "TIMESTAMP","mode" :"REQUIRED"},
+{"name": "tenantId","type": "STRING","mode" :"REQUIRED"},
+{"name": "tenantName","type": "STRING","mode" :"REQUIRED"},
+{"name": "journeyId","type": "STRING","mode" :"REQUIRED"},
+{"name": "journeyVersion","type": "STRING","mode" :"REQUIRED"},
+{"name": "journeyName","type": "STRING","mode" :"REQUIRED"},
+{"name": "nodeKey","type": "STRING","mode" :"REQUIRED"},
+{"name": "nodeName","type": "STRING","mode" :"REQUIRED"},
+{"name": "channelKind","type": "STRING","mode" :"REQUIRED"},
+{"name": "shootingId","type": "STRING","mode" :"REQUIRED"},
+{"name": "shootingCreated","type": "TIMESTAMP","mode" :"REQUIRED"},
+{"name": "shootingCorrelationId","type": "STRING","mode" :"REQUIRED"},
+{"name": "trackingUrl","type": "STRING","mode" :"REQUIRED"},
+{"name": "trackingIp","type": "STRING","mode" :"REQUIRED"},
+{"name": "userAgent","type": "STRING","mode" :"REQUIRED"},
+{"name": "userAgentBrowserFamily","type": "STRING","mode" :"REQUIRED"},
+{"name": "userAgentBrowserVersion","type": "STRING","mode" :"REQUIRED"},
+{"name": "userAgentOSFamily","type": "STRING","mode" :"REQUIRED"},
+{"name": "userAgentOSVersion","type": "STRING","mode" :"REQUIRED"},
+{"name": "userAgentDeviceFamily","type": "STRING","mode" :"REQUIRED"},
+{"name": "carrierName","type": "STRING","mode" :"REQUIRED"},
+{"name": "recipient","type": "STRING","mode" :"REQUIRED"},
+{"name": "eventType","type": "STRING","mode" :"REQUIRED"},
+{"name": "bounceType","type": "STRING","mode" :"REQUIRED"},
+{"name": "bounceReason","type": "STRING","mode" :"REQUIRED"},
+{"name": "response","type": "STRING","mode" :"REQUIRED"},
+{"name": "eventDate","type": "TIMESTAMP","mode" :"REQUIRED"},
+{"name": "providerEventId","type": "STRING","mode" :"REQUIRED"},
+{"name": "movementDate","type": "DATE","mode" :"REQUIRED"},
+{"name": "movementFilename","type": "STRING","mode" :"REQUIRED"},
+{"name": "movementLot","type": "STRING","mode" :"REQUIRED"},
+{"name": "integrationId","type": "STRING","mode" :"REQUIRED"},
+{"name": "integrationCreated","type": "TIMESTAMP","mode" :"REQUIRED"},
+{"name": "integrationProcessingDate","type": "TIMESTAMP","mode" :"REQUIRED"},
+{"name": "customerId","type": "STRING","mode" :"REQUIRED"},
+{"name": "customerIdentification","type": "STRING","mode" :"REQUIRED"},
+{"name": "customerName","type": "STRING","mode" :"REQUIRED"},
+{"name": "documentDescription","type": "STRING","mode" :"NULLABLE"},
+{"name": "documentDueDate","type": "DATE","mode" :"NULLABLE"},
+{"name": "isTest","type": "BOOLEAN","mode" :"REQUIRED"},
+{"name": "userName","type": "STRING","mode" :"NULLABLE"},
+{"name": "userEmail","type": "STRING","mode" :"NULLABLE"},
+{"name": "documentCorrelationId","type": "STRING","mode" :"NULLABLE"},
+{"name": "documentNumber","type": "STRING","mode" :"NULLABLE"},
+{"name": "documentStoragePath","type": "STRING","mode" :"NULLABLE"},
+{"name": "journeyContextId","type": "STRING","mode" :"REQUIRED"},
+{"name": "channelCertificationKind","type": "STRING","mode" :"REQUIRED"}]

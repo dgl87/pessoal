@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "32dd10f8-1120-4bbe-921a-baded6b4633d",
+		"name": "vuc-customer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Document Customer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "tenantId",
+						"value": "61e9b9a7df330d04e0116c8c",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5001/v1/?operation=profile&value=22709310848&documentLot=IR+03/31/2022+00:00:00&skip=0&limit=15",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"v1",
+						""
+					],
+					"query": [
+						{
+							"key": "operation",
+							"value": "profile"
+						},
+						{
+							"key": "value",
+							"value": "22709310848"
+						},
+						{
+							"key": "documentLot",
+							"value": "IR+03/31/2022+00:00:00"
+						},
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://do-storage-prd.azurewebsites.net/api/v1/file/379873742E478D46F1D48CE82EED48215B4D6EB459386F1851D39EABF576CE07:status?tenantId=5b27bcb80829731a00b48f94",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "tenantId",
+						"value": "6081a67d556a318c64a7dda1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://do-storage-prd.azurewebsites.net/api/v1/file/2BB54A957CB1B8385B697B79B93B0FC6274803412EA5213B07440F018FE8A02E:status",
+					"protocol": "https",
+					"host": [
+						"do-storage-prd",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"file",
+						"2BB54A957CB1B8385B697B79B93B0FC6274803412EA5213B07440F018FE8A02E:status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://do-storage-prd.azurewebsites.net/api/v1/file/563BADF91BC50BA79EE468AD02803D83482D1CB90D11F4B4D9BF26FDD1ABE123:status?tenantId=5b27bcb80829731a00b48f94",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://do-storage-prd.azurewebsites.net/api/v1/file/563BADF91BC50BA79EE468AD02803D83482D1CB90D11F4B4D9BF26FDD1ABE123:status?tenantId=6081a67d556a318c64a7dda1",
+					"protocol": "https",
+					"host": [
+						"do-storage-prd",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"file",
+						"563BADF91BC50BA79EE468AD02803D83482D1CB90D11F4B4D9BF26FDD1ABE123:status"
+					],
+					"query": [
+						{
+							"key": "tenantId",
+							"value": "6081a67d556a318c64a7dda1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

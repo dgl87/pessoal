@@ -1,0 +1,14 @@
+kibana dev
+http://doelastica1ndev.direct.one:4213
+elastic
+#pos1a6h9p
+
+kibana stg
+doelastica1nhml.direct.one:5582
+usr_elastic_appd1_hml
+0i1J745DPKEt8SJoRQleTe5njnqwYsXtveTxW1oHtiAWPj
+
+kibana prod
+link: http://d1analytics.direct.one:12413
+usr_elastic_appd1
+0Payyj7o7HJobrPX1aO0f0SikufaItbw6MAhIOu8wqnNWoSgFqRl

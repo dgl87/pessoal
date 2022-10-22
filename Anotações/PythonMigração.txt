@@ -1,0 +1,22 @@
+Instalar Python
+Instalar Pip
+instalar usando pip
+google-api-core==1.29.0
+google-auth==1.30.1
+google-cloud-bigquery==0.20.0 ** 2,2,0
+google-cloud-bigquery-datatransfer==3.1.1
+google-cloud-core==1.6.0
+google-crc32c==1.1.2
+google-resumable-media==1.3.0
+googleapis-common-protos==1.53.0
+
+virtualenv venv
+py app.py 
+venv/Scripts/activate
+py app.py --env production --op deploy-master-dataset  --cria mst
+py app.py --env production --op add-tenant --tenantId 56d8af35d75d9632105a33f0
+
+DECLARE p_tenant_id STRING DEFAULT ('57bf002600b4e11ab0e6074d'); 
+DECLARE ingestDate DEFAULT DATE (2021,09,20); 
+CALL `journey-event-process-prod.portoseguro.sp_merge_journey_customer`(p_tenant_id, ingestDate);
+CALL `journey-event-process-prod.portoseguro.sp_merge_journey_rate`(p_tenant_id, ingestDate);

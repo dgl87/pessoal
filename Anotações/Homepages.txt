@@ -1,0 +1,56 @@
+Header = TenantId
+GET - RESPONSE
+{
+	"Frames" : [
+		{
+			"Position" : 0,
+			"Channel": "Bot",
+			"Value" : "15000"
+		},
+		{
+			"Position" : 1,
+			"Channel": "E-mail",
+			"Value" : "985.789"
+		},
+		{
+			"Position" : 2,
+			"Channel": "Wpp",
+			"Value" : "78%"
+		},
+		{
+			"Position" : 3,
+			"Channel": "E-mail",
+			"Value" : "89%"
+		},
+		{
+			"Position" : 4,
+			"Channel": "Wpp",
+			"Value" : "75%"
+		},
+		{
+			"Position" : 5,
+			"Channel": "Sms",
+			"Value" : "17%"
+		}
+	]
+}
+
+https://dev.azure.com/directoneapp/Thanos/_git/directone.app.homepages
+
+Criar view home pages
+Bot não tem - Altu, ver com a Gabi pra ver
+Tenant não pode faltar de jeito nenhum 5 minutos
+
+Filtrar por tenantId, agrupando por channel kind e somando total unique
+
+fazer 1 select, Jogar para uma lista de objetos e depois calcular 1 por um em seu objeto montando 1 objeto de saída, um cara só de saída
+
+
+select CONVERT(DATE, rs.movement) DataMovimento, ff.id, ff.tradeName Tenant, gi.title NomeProduto, sum(CONVERT(INT, rs.amount)) Quantidade, sum(rs.total) Valor from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm f on f.id = rs.providerId	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement >= '2021-08-01 00:00:00.000' and gi.title LIKE '%bot%'
+group by rs.movement, ff.id, ff.tradename, gi.title, rs.movement, f.tradename
+GO

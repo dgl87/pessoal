@@ -1,0 +1,28 @@
+
+
+//Pesquisa created por range de data
+db.shooting.find({
+    created: {
+        $gte: ISODate("2021-07-29T17:33:50.790+0000"),
+        $lte: ISODate("2022-04-14T22:28:46.901")
+    }
+});
+
+//Verifica se existe o kit.id em algum documento
+db.customer.find({
+    "kits.id": {
+        $exists: true
+    }
+});
+
+//Localiza utilizando filtro e range de data
+db.blobEvent.caedu.find({
+    "metadata.movementId": "08032022_00140",
+    "metadata.tenantExternalKey": "CAEDU",
+    "created": {
+        $gte: ISODate("2022-03-09T00:00:00.000+0000"),
+        $lte: ISODate("2022-03-09T23:59:59.999+0000")
+    }
+    ,
+    "metadata.total": 1
+});

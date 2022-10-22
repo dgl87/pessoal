@@ -1,0 +1,184 @@
+V6
+CREATE VIEW [dbo].[V_Dados_Billing_GoodDataV6] AS select CONVERT(DATE, rs.movement) DataMovimento, ff.id, ff.tradeName Tenant, gi.title NomeProduto, 
+sum(CONVERT(INT, rs.amount)) Quantidade, sum(rs.total) Valor from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement >= '2021-01-01 00:00:00.000' and gi.title != 'Total' and rs.Total != 0 
+group by ff.id, ff.tradeName, gi.title, RS.Movement
+
+CERTA CONFERIDA NA PLANILHA
+select RS.Movement, ff.id, ff.tradeName, gi.title, 
+sum(CONVERT(INT, rs.amount)) Quantidade, sum(rs.total) Valor from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement between '2021-01-01 00:00:00.000' and '2021-12-31 00:00:00.000' and gi.title != 'Total' and ff.tradeName = 'SOMPO' and rs.Total != 0 
+group by ff.id, ff.tradeName, gi.title, RS.Movement
+--order by RS.Movement, gi.title
+
+VIEW UTILIZADA NO GOODDATA
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE VIEW [dbo].[V_Dados_Billing_GoodDataV5] AS select CONVERT(DATE, rs.movement) DataMovimento, ff.id, ff.tradeName Tenant, gi.title NomeProduto, 
+sum(CONVERT(INT, rs.amount)) Quantidade, sum(rs.total) Valor from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement >= '2021-08-01 00:00:00.000' and gi.title != 'Total' and rs.Total != 0 
+group by ff.id, ff.tradeName, gi.title, RS.Movement
+GO
+
+VISUALIZAÇÃO MENSAL DE TENANT POR MÊS
+select ff.id, ff.tradeName, gi.title, --RS.Movement,
+sum(CONVERT(INT, rs.amount)) Quantidade, sum(rs.total) Valor from reportsummary rs	
+left join [dbo].[grouping] g on g.id = rs.groupingid	
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid	
+left join firm ff on ff.id = g.contractorId	
+where rs.movement between '2021-01-01 00:00:00.000' and '2021-12-31 00:00:00.000' and ff.tradeName = 'SOMPO' and rs.Total != 0 and gi.title != 'Total'
+group by ff.id, ff.tradeName, gi.title--, RS.Movement
+--order by RS.Movement, gi.title
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+select ff.id, ff.tradeName as tenant, rs.movement, gi.title, f.tradename as provider, sum(rs.amount) amount, sum(rs.total) total from reportsummary rs
+left join [dbo].[grouping] g on g.id = rs.groupingid
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid
+left join firm f on f.id = rs.providerId
+left join firm ff on ff.id = g.contractorId
+where f.tradename = 'D1.CX' --g.contractorid = 22
+ and rs.movement between '2021-08-01 00:00:00.000' and '2021-08-30 00:00:00.000'
+group by ff.id, ff.tradename, gi.title, rs.movement, f.tradename
+order by rs.movement
+
+select top 100 * from [dbo].[groupingitem]
+order by id desc --title titulo da jornada é a jornada
+
+select top 10 rs.movement, gi.title, rs.amount, rs.total total from reportdetail rs
+left join [dbo].[grouping] g on g.id = rs.groupingid
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid
+--left join firm ff on ff.id = g.contractorId
+--where g.contractorId = 135
+--and rs.movement between '2021-08-01 00:00:00.000' and '2021-08-30 00:00:00.000'
+--group by ff.id, ff.tradename, gi.title, rs.movement, f.tradename
+order by rs.id desc
+
+select top 10 rs.movement, gi.title, rs.amount, rs.total total, ff.id tenantId, ff.guid, ff.externalKey from reportproviderdetail rs
+left join [dbo].[grouping] g on g.id = rs.groupingid
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid
+left join firm ff on ff.id = g.contractorId
+--where g.contractorid = 135
+--and rs.movement between '2021-08-01 00:00:00.000' and '2021-08-30 00:00:00.000'
+--group by ff.id, ff.tradename, gi.title, rs.movement, f.tradename
+order by rs.id desc
+
+select top 10 * from reportproviderdetail rs
+
+select top 10 * from GroupingItem gi
+
+select top 50 * from [dbo].[order]
+where Id = 523093 -- Consigo saber se é Jornadas ou AppD1
+
+select top 50 * from [dbo].[OrderService]
+where OrderId = 523093
+
+select top 50 * from [dbo].[grouping]
+select top 50 * from [dbo].[groupingitem]
+select top 50 * from [dbo].[grouping]
+select top 50 * from firm
+
+
+select top 50 * from reportdetail -- Movement - data
+select top 50 * from firm -- TradeName - Tenant
+select top 50 total from reportdetail -- Total
+select top 50 * from [dbo].[groupingitem] -- Title - Produtos - Itens cobrados
+select top 50 * from reportsummary
+
+select top 500 rs.Movement, f.tradeName as tenant, gi.Title, rs.Total from reportsummary rs -- Movement - data
+left join [dbo].[grouping] g on g.id = rs.groupingid
+left join firm f on f.id = rs.providerId
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid
+group by gi.title, rs.Total, rs.movement, f.tradename
+order by rs.movement
+
+group by ff.id, ff.tradename, gi.title, rs.movement, f.tradename
+order by rs.movement
+
+
+select top 50 * from firm -- TradeName - Tenant
+select top 50 * from [dbo].[groupingitem] -- Title - Produtos - Itens cobrados
+
+
+left join [dbo].[groupingitem] gi;
+
+select ff.id, ff.tradeName as tenant, rs.movement, gi.title, f.tradename as provider, sum(rs.amount) amount, sum(rs.total) total from reportsummary rs
+left join [dbo].[grouping] g on g.id = rs.groupingid
+left join [dbo].[groupingitem] gi on gi.id = rs.groupingitemid
+left join firm f on f.id = rs.providerId
+left join firm ff on ff.id = g.contractorId
+where f.tradename = 'D1.CX' --g.contractorid = 22
+ and rs.movement between '2021-08-01 00:00:00.000' and '2021-08-30 00:00:00.000'
+group by ff.id, ff.tradename, gi.title, rs.movement, f.tradename
+order by rs.movement
+
+-------------------------------------------
+colunar os produtos e agrupa as campanhas
+pivo
+SELECT <non-pivoted column>,  
+    [first pivoted column] AS <column name>,  
+    [second pivoted column] AS <column name>,  
+    ...  
+    [last pivoted column] AS <column name>  
+FROM  
+    (<SELECT query that produces the data>)   
+    AS <alias for the source query>  
+PIVOT  
+(  
+    <aggregation function>(<column being aggregated>)  
+FOR   
+[<column that contains the values that will become column headers>]   
+    IN ( [first pivoted column], [second pivoted column],  
+    ... [last pivoted column])  
+) AS <alias for the pivot table>  
+<optional ORDER BY clause>;  
+
+ex
+USE AdventureWorks2014 ;  
+GO  
+SELECT DaysToManufacture, AVG(StandardCost) AS AverageCost   
+FROM Production.Product  
+GROUP BY DaysToManufacture;  
+
+pivo
+-- Pivot table with one row and five columns  
+SELECT 'AverageCost' AS Cost_Sorted_By_Production_Days,   
+  [0], [1], [2], [3], [4]  
+FROM  
+(
+  SELECT DaysToManufacture, StandardCost   
+  FROM Production.Product
+) AS SourceTable  
+PIVOT  
+(  
+  AVG(StandardCost)  
+  FOR DaysToManufacture IN ([0], [1], [2], [3], [4])  
+) AS PivotTable;  
+
+complexo
+USE AdventureWorks2014;  
+GO  
+SELECT VendorID, [250] AS Emp1, [251] AS Emp2, [256] AS Emp3, [257] AS Emp4, [260] AS Emp5  
+FROM   
+(SELECT PurchaseOrderID, EmployeeID, VendorID  
+FROM Purchasing.PurchaseOrderHeader) p  
+PIVOT  
+(  
+COUNT (PurchaseOrderID)  
+FOR EmployeeID IN  
+( [250], [251], [256], [257], [260] )  
+) AS pvt  
+ORDER BY pvt.VendorID;  

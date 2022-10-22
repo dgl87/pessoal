@@ -1,0 +1,16 @@
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\bin\Debug\net5.0\06Encapsulamento.exe
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\bin\Debug\net5.0\06Encapsulamento.deps.json
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\bin\Debug\net5.0\06Encapsulamento.runtimeconfig.json
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\bin\Debug\net5.0\06Encapsulamento.runtimeconfig.dev.json
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\bin\Debug\net5.0\06Encapsulamento.dll
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\bin\Debug\net5.0\06Encapsulamento.pdb
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\obj\Debug\net5.0\06Encapsulamento.csproj.AssemblyReference.cache
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\obj\Debug\net5.0\06Encapsulamento.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\obj\Debug\net5.0\06Encapsulamento.AssemblyInfoInputs.cache
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\obj\Debug\net5.0\06Encapsulamento.AssemblyInfo.cs
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\obj\Debug\net5.0\06Encapsulamento.csproj.CoreCompileInputs.cache
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\obj\Debug\net5.0\06Encapsulamento.dll
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\obj\Debug\net5.0\refint\06Encapsulamento.dll
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\obj\Debug\net5.0\06Encapsulamento.pdb
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\obj\Debug\net5.0\06Encapsulamento.genruntimeconfig.cache
+C:\Users\Douglas\Desktop\Linguagem de Programação CSharp\Basico\Secao04\Orientação a Objetos\06Encapsulamento\obj\Debug\net5.0\ref\06Encapsulamento.dll

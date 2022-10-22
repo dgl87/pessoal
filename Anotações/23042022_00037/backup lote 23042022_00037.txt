@@ -1,0 +1,874 @@
+{ 
+    "_id" : "5002963D5857EBC9C0A52EE28E3E1AA09A3078E521191A5F4B2294E080DBB48F", 
+    "created" : ISODate("2022-04-23T10:14:53.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:54.306+0000"), 
+    "eventId" : "c9d1772d-b01e-0093-0bfa-5609a506c4d8", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000015_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "cb6e993d-8d74-449c-9352-ee12407bbc25", 
+        "requestId" : "c9d1772d-b01e-0093-0bfa-5609a5000000", 
+        "eTag" : "0x8DA25121C24B7F7", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(773134), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000015_mai2022.pdf", 
+        "sequencer" : "0000000000000000000000000000287600000000013371c5", 
+        "storageDiagnostics" : {
+            "batchId" : "52683582-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:53.816+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000015_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:53.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000015_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:53.816+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000015_mai2022.pdf"
+}
+{ 
+    "_id" : "8026A16F0F43CBE8933DCCF8B13AF558B98CEA54499573C0D6EE9E5EDD6C171E", 
+    "created" : ISODate("2022-04-23T10:14:53.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:54.306+0000"), 
+    "eventId" : "8e796217-501e-001d-5bfa-56df1306c528", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000117_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "78346383-1047-45fb-93cb-076c0792f109", 
+        "requestId" : "8e796217-501e-001d-5bfa-56df13000000", 
+        "eTag" : "0x8DA25121C2776BC", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(786645), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000117_mai2022.pdf", 
+        "sequencer" : "0000000000000000000000000000287600000000013371cc", 
+        "storageDiagnostics" : {
+            "batchId" : "52683582-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:53.833+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000117_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:53.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000117_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:53.833+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000117_mai2022.pdf"
+}
+{ 
+    "_id" : "830FBAB15EA9BB45FF60A8C6F8D925BBAB1812C234FBE9285CB117F4D88EA349", 
+    "created" : ISODate("2022-04-23T10:14:53.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:54.316+0000"), 
+    "eventId" : "c9d17794-b01e-0093-60fa-5609a506c6ad", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000121_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "053e5e20-54f5-484c-865b-c7b3a9cdfc01", 
+        "requestId" : "c9d17794-b01e-0093-60fa-5609a5000000", 
+        "eTag" : "0x8DA25121C3CD04D", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(786698), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000121_mai2022.pdf", 
+        "sequencer" : "0000000000000000000000000000287600000000013371d4", 
+        "storageDiagnostics" : {
+            "batchId" : "52683582-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:53.974+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000121_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:53.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000121_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:53.974+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000121_mai2022.pdf"
+}
+{ 
+    "_id" : "0F1D6A0F461601F53EC6032F18C40797ED179B6DC1942CFB6505C59A08BA0D76", 
+    "created" : ISODate("2022-04-23T10:14:53.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:54.336+0000"), 
+    "eventId" : "8e79624a-501e-001d-0afa-56df1306c6d4", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000032_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "d7a0cde0-239f-478e-9c5c-4f0da7c01090", 
+        "requestId" : "8e79624a-501e-001d-0afa-56df13000000", 
+        "eTag" : "0x8DA25121C3E56B4", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(780381), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000032_mai2022.pdf", 
+        "sequencer" : "0000000000000000000000000000287600000000013371db", 
+        "storageDiagnostics" : {
+            "batchId" : "52683582-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:53.984+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000032_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:53.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000032_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:53.984+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000032_mai2022.pdf"
+}
+{ 
+    "_id" : "00484E3428283395DFB580750DA7FD38335CB4C8A8257AFB01232A30C270B17A", 
+    "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:54.332+0000"), 
+    "eventId" : "c9d177db-b01e-0093-1bfa-5609a506c91b", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000126_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "22fe3950-1688-46db-9bc3-7f9c1f4fdfb9", 
+        "requestId" : "c9d177db-b01e-0093-1bfa-5609a5000000", 
+        "eTag" : "0x8DA25121C55F9EB", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(780426), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000126_mai2022.pdf", 
+        "sequencer" : "0000000000000000000000000000287600000000013371e9", 
+        "storageDiagnostics" : {
+            "batchId" : "52683582-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:54.138+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000126_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000126_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:54.138+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000126_mai2022.pdf"
+}
+{ 
+    "_id" : "3908CF4C394B8D92C9C8EB86A89CF69889141FC23CB39A8926B569E58630382B", 
+    "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:54.361+0000"), 
+    "eventId" : "8e79628b-501e-001d-42fa-56df1306c90d", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000040_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "c49e1c22-77b2-489b-a32b-266571eba3ba", 
+        "requestId" : "8e79628b-501e-001d-42fa-56df13000000", 
+        "eTag" : "0x8DA25121C5584C8", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(771718), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000040_mai2022.pdf", 
+        "sequencer" : "0000000000000000000000000000287600000000013371e2", 
+        "storageDiagnostics" : {
+            "batchId" : "52683582-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:54.136+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000040_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000040_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:54.136+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000040_mai2022.pdf"
+}
+{ 
+    "_id" : "7A2A6BD9E2A28DF03598D96F7CF11DB2D04E36D6000D8A93F33DDD131F6AF4A9", 
+    "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:54.735+0000"), 
+    "eventId" : "8e7962e1-501e-001d-05fa-56df1306cac0", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000052_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "c6d144c3-7b35-4fd6-842f-6f355fd76c67", 
+        "requestId" : "8e7962e1-501e-001d-05fa-56df13000000", 
+        "eTag" : "0x8DA25121C6DC42A", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(772528), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000052_mai2022.pdf", 
+        "sequencer" : "0000000000000000000000000000287600000000013371f9", 
+        "storageDiagnostics" : {
+            "batchId" : "5268373f-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:54.295+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000052_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000052_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:54.295+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000052_mai2022.pdf"
+}
+{ 
+    "_id" : "5C1B6CF920CF98EDD5A972FF1C1E370FEAC3D86B1B40248A0651EC2342E15114", 
+    "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:54.740+0000"), 
+    "eventId" : "c9d178b9-b01e-0093-61fa-5609a506cd41", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000062_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "95ba98b5-8805-4552-823b-ac3d93d60ce4", 
+        "requestId" : "c9d178b9-b01e-0093-61fa-5609a5000000", 
+        "eTag" : "0x8DA25121C85675B", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(775330), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000062_mai2022.pdf", 
+        "sequencer" : "00000000000000000000000000002876000000000133720e", 
+        "storageDiagnostics" : {
+            "batchId" : "5268373f-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:54.450+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000062_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000062_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:54.450+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000062_mai2022.pdf"
+}
+{ 
+    "_id" : "2C717B9851232FBCEF8E591AD5A6A539E93ED5FAA95F9C6C4A354CB50BD14680", 
+    "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:54.736+0000"), 
+    "eventId" : "c9d17853-b01e-0093-02fa-5609a506cac6", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000127_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "01a1d823-a410-4f66-8702-39bf48795c85", 
+        "requestId" : "c9d17853-b01e-0093-02fa-5609a5000000", 
+        "eTag" : "0x8DA25121C6E3946", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(772933), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000127_mai2022.pdf", 
+        "sequencer" : "000000000000000000000000000028760000000001337200", 
+        "storageDiagnostics" : {
+            "batchId" : "5268373f-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:54.297+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000127_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000127_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:54.297+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000127_mai2022.pdf"
+}
+{ 
+    "_id" : "581119341B3A307EED924AEE16B5B4326F5DE42EBA7ECA0D843C1E485DDB2371", 
+    "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:54.756+0000"), 
+    "eventId" : "8e79631f-501e-001d-38fa-56df1306cd1a", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000055_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "01d61007-cf00-4b3c-9913-301e0cd66ba0", 
+        "requestId" : "8e79631f-501e-001d-38fa-56df13000000", 
+        "eTag" : "0x8DA25121C82A8A7", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(781983), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000055_mai2022.pdf", 
+        "sequencer" : "000000000000000000000000000028760000000001337207", 
+        "storageDiagnostics" : {
+            "batchId" : "5268373f-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:54.431+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000055_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000055_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:54.431+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000055_mai2022.pdf"
+}
+{ 
+    "_id" : "675705B79DB61E8DFFBD2486379295843BF140601AB41453C1DF5D1037A8C94D", 
+    "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:54.774+0000"), 
+    "eventId" : "8e796359-501e-001d-6afa-56df1306cf56", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000070_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "7cc8bdf1-b96f-41d3-97a0-062682992681", 
+        "requestId" : "8e796359-501e-001d-6afa-56df13000000", 
+        "eTag" : "0x8DA25121C9E69ED", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(795582), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000070_mai2022.pdf", 
+        "sequencer" : "00000000000000000000000000002876000000000133721d", 
+        "storageDiagnostics" : {
+            "batchId" : "5268373f-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:54.612+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000070_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000070_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:54.612+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000070_mai2022.pdf"
+}
+{ 
+    "_id" : "C8C6075DFEAB98B7F9D65677D0D832D872AAE52616C08512823412C67192D6E9", 
+    "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:54.756+0000"), 
+    "eventId" : "c9d17915-b01e-0093-31fa-5609a506cf34", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000059_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "aec2cf16-eebb-4dc4-b583-9b4ce49daf91", 
+        "requestId" : "c9d17915-b01e-0093-31fa-5609a5000000", 
+        "eTag" : "0x8DA25121C9BF946", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(772602), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000059_mai2022.pdf", 
+        "sequencer" : "000000000000000000000000000028760000000001337216", 
+        "storageDiagnostics" : {
+            "batchId" : "5268373f-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:54.597+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000059_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000059_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:54.597+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000059_mai2022.pdf"
+}
+{ 
+    "_id" : "36F3D25DCF6BE01FFD2BB691C06BE1E30C9559E0B1CF8E108009C1DA8E57D8AC", 
+    "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:55.191+0000"), 
+    "eventId" : "c9d179d1-b01e-0093-5cfa-5609a506d2b4", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000072_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "c35c7be5-bce2-4752-9321-1f93c9e6e9e1", 
+        "requestId" : "c9d179d1-b01e-0093-5cfa-5609a5000000", 
+        "eTag" : "0x8DA25121CC8F628", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(779924), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000072_mai2022.pdf", 
+        "sequencer" : "000000000000000000000000000028760000000001337232", 
+        "storageDiagnostics" : {
+            "batchId" : "526838c6-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:54.892+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000072_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000072_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:54.892+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000072_mai2022.pdf"
+}
+{ 
+    "_id" : "5CA29682E89D830FC0A7BD7978BBCB084D6052D91C73E1D08FC767496FF766CF", 
+    "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:55.198+0000"), 
+    "eventId" : "8e7963b0-501e-001d-30fa-56df1306d0c1", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000071_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "b6b59fb2-cbcc-4e13-80e4-a19bbea35627", 
+        "requestId" : "8e7963b0-501e-001d-30fa-56df13000000", 
+        "eTag" : "0x8DA25121CB4D4D2", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(783431), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000071_mai2022.pdf", 
+        "sequencer" : "000000000000000000000000000028760000000001337224", 
+        "storageDiagnostics" : {
+            "batchId" : "526838c6-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:54.759+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000071_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000071_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:54.759+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000071_mai2022.pdf"
+}
+{ 
+    "_id" : "F16139DD23BC0AA57862546507A96418B51B74734702C822128C64EB431707A9", 
+    "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:55.195+0000"), 
+    "eventId" : "8e7963fc-501e-001d-6bfa-56df1306d345", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000104_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "f1b61641-c6eb-4036-aef4-7280e4fa002c", 
+        "requestId" : "8e7963fc-501e-001d-6bfa-56df13000000", 
+        "eTag" : "0x8DA25121CCC02EC", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(787970), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000104_mai2022.pdf", 
+        "sequencer" : "00000000000000000000000000002876000000000133723a", 
+        "storageDiagnostics" : {
+            "batchId" : "526838c6-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:54.911+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000104_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000104_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:54.911+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000104_mai2022.pdf"
+}
+{ 
+    "_id" : "355D97DB48111F5F42ACCB955A0C1BC51F0ED3CC882A24A896516A398AB97EBB", 
+    "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:55.218+0000"), 
+    "eventId" : "c9d17979-b01e-0093-0afa-5609a506d0ef", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000149_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "3b12fbf6-e242-4806-86d6-ec1898ecabb3", 
+        "requestId" : "c9d17979-b01e-0093-0afa-5609a5000000", 
+        "eTag" : "0x8DA25121CB63437", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(777289), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000149_mai2022.pdf", 
+        "sequencer" : "00000000000000000000000000002876000000000133722b", 
+        "storageDiagnostics" : {
+            "batchId" : "526838c6-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:54.769+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000149_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:54.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000149_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:54.769+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000149_mai2022.pdf"
+}
+{ 
+    "_id" : "361F5F556810BBF27961429704DF4131E1462B390CBE97A6301AF707CA132A76", 
+    "created" : ISODate("2022-04-23T10:14:55.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:55.197+0000"), 
+    "eventId" : "8e79641b-501e-001d-07fa-56df1306d485", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000110_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "a28032cb-b32b-4ccc-a5b7-1074f153e786", 
+        "requestId" : "8e79641b-501e-001d-07fa-56df13000000", 
+        "eTag" : "0x8DA25121CDEC4D9", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(796987), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000110_mai2022.pdf", 
+        "sequencer" : "000000000000000000000000000028760000000001337249", 
+        "storageDiagnostics" : {
+            "batchId" : "526838c6-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:55.035+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000110_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:55.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000110_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:55.035+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000110_mai2022.pdf"
+}
+{ 
+    "_id" : "41ADBECF3E5A7FB14A45C5D84591CA2291A275D08878AADA451D566C6DF1839E", 
+    "created" : ISODate("2022-04-23T10:14:55.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:55.203+0000"), 
+    "eventId" : "c9d17a17-b01e-0093-1afa-5609a506d439", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000101_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "63c90196-7ada-46ba-8559-e29dd47485cb", 
+        "requestId" : "c9d17a17-b01e-0093-1afa-5609a5000000", 
+        "eTag" : "0x8DA25121CDCA243", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(775990), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000101_mai2022.pdf", 
+        "sequencer" : "000000000000000000000000000028760000000001337242", 
+        "storageDiagnostics" : {
+            "batchId" : "526838c6-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:55.020+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000101_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:55.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000101_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:55.020+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000101_mai2022.pdf"
+}
+{ 
+    "_id" : "F2E0BC2066339790007FCE623E1B1F2C1F798788B07BCAA9695D058CD1F71F17", 
+    "created" : ISODate("2022-04-23T10:14:55.000+0000"), 
+    "inserted" : ISODate("2022-04-23T10:14:55.598+0000"), 
+    "eventId" : "c9d17a69-b01e-0093-60fa-5609a506d687", 
+    "topic" : "/subscriptions/7effafab-cec6-45d7-b7bf-63b9afa0b8ee/resourceGroups/do-storage-prd/providers/Microsoft.Storage/storageAccounts/ststoraged1prod", 
+    "subject" : "/blobServices/default/containers/agillitas/blobs/fatura/23042022_00037/000000103_mai2022.pdf", 
+    "data" : {
+        "api" : "PutBlockList", 
+        "clientRequestId" : "73909f74-c11a-48fb-93c6-b4af02f938fd", 
+        "requestId" : "c9d17a69-b01e-0093-60fa-5609a5000000", 
+        "eTag" : "0x8DA25121CF41E78", 
+        "contentType" : "application/octet-stream", 
+        "contentLength" : NumberLong(791873), 
+        "blobType" : "BlockBlob", 
+        "url" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000103_mai2022.pdf", 
+        "sequencer" : "000000000000000000000000000028760000000001337250", 
+        "storageDiagnostics" : {
+            "batchId" : "52683a02-1006-0051-00fa-564f23000000"
+        }
+    }, 
+    "eventType" : "Microsoft.Storage.BlobCreated", 
+    "eventTime" : ISODate("2022-04-23T10:14:55.174+0000"), 
+    "metadataVersion" : "1", 
+    "dataVersion" : "", 
+    "metadata" : {
+        "_id" : "https://ststoraged1prod.blob.core.windows.net/agillitas/fatura/23042022_00037/000000103_mai2022.pdf", 
+        "created" : ISODate("2022-04-23T10:14:55.000+0000"), 
+        "tenantId" : "5faaee04b1a5b00bb03d827d", 
+        "tenantExternalKey" : "AGILLITAS", 
+        "movementId" : "23042022_00037", 
+        "externalKey" : "000000103_MAI2022", 
+        "kind" : "web", 
+        "certified" : false, 
+        "transpromo" : false, 
+        "total" : NumberInt(1), 
+        "onDemand" : false
+    }, 
+    "operations" : [
+        {
+            "type" : "Created", 
+            "date" : ISODate("2022-04-23T10:14:55.174+0000")
+        }
+    ], 
+    "storagePath" : "/agillitas/fatura/23042022_00037/000000103_mai2022.pdf"
+}

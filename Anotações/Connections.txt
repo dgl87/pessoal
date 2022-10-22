@@ -1,0 +1,17 @@
+Journey
+10:36
+mongodb://usr_journey_adminsettings:0xiKCn4E5x9Zxe0z@rsd1.d1.cx:19582,rsd2.d1.cx:26458,rsd3.d1.cx:34856/admin?readPreference=primary
+10:37
+appd1
+mongodb://usr_onetoone_root:WzOP5KPH31pnqhCU8bqutwmVFuVJaCCv@domongoc1prd.d1.cx:19582,domongoc2prd.d1.cx:23185,domongoc3prd.d1.cx:32451/admin?readPreference=primary
+10:40
+admin settings jornadas
+na tabela tenant pega o externalkey + tenantid (tenantelastic)
+root appd1
+na tabela connection pega a connection do tenant preencher a connection string e o nome do banco de dados
+são 4 configurações
+10:43
+https://docs.google.com/spreadsheets/d/1UYGQF_Q4qPEF0bU7Zjjs7Tq271v2_z-CpM8B-EnvHjo/edit#gid=0
+
+Connection String do mongo do storage em stage
+mongodb://usr_appd1_storage_hml:AFd5aVFhU6A61w7gIgUxm4j6Dim4NoOH@domongofba1hml.direct.one:16897,domongofba2hml.direct.one:16907,domongofba3hml.direct.one:16917/appd1_storage_hml?replicaSet=rsAzureHml&authSource=admin
